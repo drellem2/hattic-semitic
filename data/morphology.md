@@ -1,7 +1,8 @@
 # Morphology: the eight pre-registered items
 
 Items fixed by [`docs/preregistration.md`](../docs/preregistration.md) §5.1,
-recorded for Hattic, Proto-Semitic and Proto-Uralic (Control B). Every form
+recorded for Hattic, Proto-Semitic, Proto-Afroasiatic (the second arm,
+amendments A4 and A5) and Proto-Uralic (Control B). Every form
 below was read in the viewed source at the page or entry given. `cited` has
 the meaning of amendment A2: the source was viewed during collection, and the
 link points to the page or entry. No form here is supplied from memory, and an
@@ -22,6 +23,13 @@ Sources and link targets:
 - **Sammallahti 1988** (in D. Sinor, ed., *The Uralic Languages*), scan
   `https://archive.org/details/the-uralic-languages-description-history-and-foreign-influences/page/n<leaf>`;
   **UEW** via Uralonet, `https://uralonet.nytud.hu/eintrag.cgi?id_eintrag=<n>`.
+- **Militarev & Stolbova**: *Afroasiatic etymology*, Tower of Babel
+  database, StarLing (`afaset`), record `N` at
+  `https://starlingdb.org/cgi-bin/response.cgi?root=config&basename=%2fdata%2fsemham%2fafaset&first=N`,
+  where it is the first record on the page. Viewed 2026-10-03. Hayward 2000,
+  the registered morphology source for this arm, could not be viewed
+  (lending-restricted), so under A4.1 the primary lexical source is used for
+  all eight items (A5).
 
 Under amendment A3, Schuster 1974 takes precedence over Kammenhuber 1969 for
 Hattic. Both are listed, because their disagreements matter here.
@@ -63,6 +71,27 @@ Hattic. Both are listed, because their disagreements matter here.
 | 4 | 1pl bound | *-na/-ni/-nu | Common Semitic | suffix | "we, us, our" | cited:Huehnergard 2011 (AHD App. II), entry -n; https://ahdictionary.com/word/semitic.html#-n |
 | 1–8 | everything else | — | | | the appendix gives no independent pronouns, no 2sg or 3sg markers, no negation, prohibitive or plural marker, and names a causative stem without printing its affix | |
 
+## Proto-Afroasiatic
+
+All forms are from the Militarev–Stolbova database, labelled
+"Proto-Afro-Asiatic" there. The quote is the record's reconstruction and
+"Meaning" field, checked by machine to be a substring of the viewed page.
+The database does not say whether a form is bound or independent. The
+position column therefore gives only what the notation shows.
+
+| # | item | form | position | quote (verbatim) | branches as given | provenance |
+|---|---|---|---|---|---|---|
+| 1 | 1st person | *-aku | not stated; written with a leading hyphen | "Proto-Afro-Asiatic: \*-aku Meaning: 1st p. pron." | no reflex fields; the notes read "Sem, Eg, Berb, see Ndr 19." Number is not stated | cited:Militarev & Stolbova, Afroasiatic etymology, record 344; …&first=344 |
+| 1, 2, 4 | 1sg, 2sg, 1pl excl. | *ʔan- | not stated | "Proto-Afro-Asiatic: \*ʔan- Meaning: deictic element in 1st and 2d p. sing. and 1 p. plur. excl." | no reflex fields. The notes cite ND 47 and Egyptian i'n, a focus particle | cited:Militarev & Stolbova, Afroasiatic etymology, record 72; …&first=72 |
+| 5 | negation | *ʔVl- | not stated | "Proto-Afro-Asiatic: \*ʔVl- Meaning: not" | Semitic ʔa/ul, Berber ul; the notes read "Sem., Cush., Omot. (Ndr 24)" | cited:Militarev & Stolbova, Afroasiatic etymology, record 210; …&first=210 |
+| 5 | negation | *ʔy- | not stated | "Proto-Afro-Asiatic: \*ʔy- Meaning: not" | Semitic (Geʿez, Tigrinya, Tigre); the notes read "Sem, Eg, EC, WCh" | cited:Militarev & Stolbova, Afroasiatic etymology, record 234; …&first=234 |
+| 5 | negation | *ma | not stated | "Proto-Afro-Asiatic: \*ma Meaning: not" | Semitic, Saho-Afar, Low East Cushitic, South Cushitic, Omotic | cited:Militarev & Stolbova, Afroasiatic etymology, record 1695; …&first=1695 |
+| 3, 6, 7, 8 | — | | | | The database has no record glossed as a 3rd-person, prohibitive, nominal plural or causative marker. "Meaning" fields were searched for pronoun, person, negation, prohibitive, plural and causative terms, and the "Notes" fields for "pron", "plural", "causat", "negat", "prohib" and "person" | |
+
+None of these glosses carries a doubt marker. *ʔVl- and *ʔy- are glossed
+only "not", so they are entered under negation (item 5), not under the
+prohibitive (item 6). The source's notes are not used to re-gloss them.
+
 ## Proto-Uralic (Control B)
 
 | # | item | form | position | gloss as given | provenance |
@@ -80,18 +109,19 @@ For 2sg, Sammallahti 1988 takes precedence over the UEW (§4.2).
 An item is testable for a language pair only if both sides have a cited,
 securely glossed form.
 
-| item | Hattic | Proto-Semitic | Proto-Uralic | testable H–PS | testable H–PU |
-|---|---|---|---|---|---|
-| 1 1sg | doubtful | *-ī/-ya | mȣ̈ | no | no |
-| 2 2sg | ú-un, ú-/u- (disputed) | — | *tun | no | yes |
-| 3 3sg | li-e-; te-, le-, -e/-i̯a | — | — | no | no |
-| 4 1pl | ai-/(n)i- | *-na/-ni/-nu | mȣ̈ | **yes** | yes |
-| 5 negation | taš- | — | — | no | no |
-| 6 prohibitive | taš-te- | — | — | no | no |
-| 7 plural | u̯aₐ-, eš- | — | — | no | no |
-| 8 causative | — | — | — | no | no |
+| item | Hattic | Proto-Semitic | Proto-Afroasiatic | Proto-Uralic | testable H–PS | testable H–PAA | testable H–PU |
+|---|---|---|---|---|---|---|---|
+| 1 1sg | doubtful | *-ī/-ya | *-aku, *ʔan- | mȣ̈ | no | no | no |
+| 2 2sg | ú-un, ú-/u- (disputed) | — | *ʔan- | *tun | no | **yes** | yes |
+| 3 3sg | li-e-; te-, le-, -e/-i̯a | — | — | — | no | no | no |
+| 4 1pl | ai-/(n)i- | *-na/-ni/-nu | *ʔan- (exclusive) | mȣ̈ | **yes** | **yes** | yes |
+| 5 negation | taš- | — | *ʔVl-, *ʔy-, *ma | — | no | **yes** | no |
+| 6 prohibitive | taš-te- | — | — | — | no | no | no |
+| 7 plural | u̯aₐ-, eš- | — | — | — | no | no | no |
+| 8 causative | — | — | — | — | no | no | no |
 
-As assembled, **1 of 8** items is testable for Hattic–Proto-Semitic; §5.3
+As assembled, **1 of 8** items is testable for Hattic–Proto-Semitic and
+**3 of 8** for Hattic–Proto-Afroasiatic; §5.3 (and A4.2 for the second arm)
 requires at least 4. Most of the missing items are missing on the
 Proto-Semitic side, because Huehnergard 2019 could not be viewed. They are
 not missing because Proto-Semitic lacks these morphemes. A viewed copy of

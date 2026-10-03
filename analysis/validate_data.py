@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Validate the slot lists under data/ and report their counts.
 
-Checks, for data/hattic.tsv, data/proto_semitic.tsv and every
-data/control_*.tsv:
+Checks, for data/hattic.tsv, data/proto_semitic.tsv,
+data/proto_afroasiatic.tsv and every data/control_*.tsv:
 
 - the header is exactly the expected column list;
 - there is one row per Leipzig-Jakarta slot, 1..100 in order, and each
@@ -13,7 +13,10 @@ data/control_*.tsv:
   has no provenance;
 - controlled-vocabulary columns hold only their allowed values;
 - in hattic.tsv, `decision` is `counts` exactly when the form is cited,
-  securely glossed and in a lexical slot (preregistration §1.2, A3).
+  securely glossed and in a lexical slot (preregistration §1.2, A3);
+- in proto_afroasiatic.tsv, a filled slot is at the Proto-Afro-Asiatic
+  level, has reflexes in at least two branches, one not Semitic (A4.1),
+  records the date viewed, and quotes the reconstruction and its gloss.
 
 Exit status is 0 if every file validates, 1 otherwise. Counts are printed
 either way.
@@ -37,6 +40,10 @@ COLUMNS = {
     "proto_semitic.tsv": COMMON + [
         "root", "form", "level", "gloss_as_given", "match", "provenance",
         "notes",
+    ],
+    "proto_afroasiatic.tsv": COMMON + [
+        "root", "form", "level", "gloss_as_given", "match", "provenance",
+        "branches", "non_semitic_branches", "viewed", "quote", "notes",
     ],
     "control": COMMON + [
         "form", "gloss_as_given", "match", "provenance", "notes",
@@ -112,9 +119,13 @@ def validate_file(path, columns, meanings):
         else:
             for col in ("provenance", "match", "gloss_confidence", "decision",
                         "stem", "segmentation", "gloss_as_given", "root",
-                        "level"):
+                        "level", "branches", "non_semitic_branches", "viewed",
+                        "quote"):
                 if r.get(col):
                     errors.append(f"{where}: {col} set but form is empty")
+
+        if "quote" in r and form:
+            errors += paa_errors(where, r)
 
         if "decision" in r and form:
             qualifies = (prov.startswith("cited:")
@@ -126,6 +137,29 @@ def validate_file(path, columns, meanings):
             if not r["gloss_confidence"]:
                 errors.append(f"{where}: form without gloss_confidence")
     return errors, rows
+
+
+PAA_BRANCHES = ("Semitic", "Egyptian", "Berber", "Chadic", "Cushitic", "Omotic")
+
+
+def paa_errors(where, r):
+    """A4.1 / A5 checks on one filled Proto-Afroasiatic row."""
+    errors = []
+    if r["level"] != "Proto-Afro-Asiatic":
+        errors.append(f"{where}: level must be 'Proto-Afro-Asiatic' (A4.1)")
+    named = [b.split(" (")[0] for b in r["branches"].split("; ") if b]
+    if any(b not in PAA_BRANCHES for b in named) or len(set(named)) != len(named):
+        errors.append(f"{where}: branches {r['branches']!r} not a list of the six branches")
+    nonsem = sum(b != "Semitic" for b in named)
+    if len(named) < 2 or nonsem < 1:
+        errors.append(f"{where}: needs at least two branches, one not Semitic (A4.1)")
+    if r["non_semitic_branches"] != str(nonsem):
+        errors.append(f"{where}: non_semitic_branches must be {nonsem}")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["viewed"]):
+        errors.append(f"{where}: viewed must be a YYYY-MM-DD date (A4.1)")
+    if f"Meaning: {r['gloss_as_given']}" not in r["quote"] or r["root"] not in r["quote"]:
+        errors.append(f"{where}: quote must contain the reconstruction and its gloss")
+    return errors
 
 
 def summarise(name, rows):
@@ -140,7 +174,7 @@ def summarise(name, rows):
         doubtful = sum(r["gloss_confidence"] == "doubtful" for r in filled)
         line += (f"; {counts} count toward the decision (cited + secure), "
                  f"{doubtful} doubtful gloss")
-    if rows and "level" in rows[0]:
+    if rows and "level" in rows[0] and "quote" not in rows[0]:
         lower = sum(1 for r in filled if r["level"] not in
                     ("Common Semitic", "Proto-Semitic"))
         if lower:
@@ -157,7 +191,8 @@ def main(argv):
         return 1
 
     targets = [("hattic.tsv", COLUMNS["hattic.tsv"]),
-               ("proto_semitic.tsv", COLUMNS["proto_semitic.tsv"])]
+               ("proto_semitic.tsv", COLUMNS["proto_semitic.tsv"]),
+               ("proto_afroasiatic.tsv", COLUMNS["proto_afroasiatic.tsv"])]
     targets += [(p.name, COLUMNS["control"])
                 for p in sorted(data.glob("control_*.tsv"))]
 

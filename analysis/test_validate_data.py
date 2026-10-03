@@ -111,5 +111,70 @@ class ValidateTest(unittest.TestCase):
         self.assertTrue(any("1..100" in e for e in self.check(rows)))
 
 
+PAA_ROW = dict(
+    root="*dam-", form="*dam-", level="Proto-Afro-Asiatic", gloss_as_given="blood",
+    match="exact", provenance=CITE,
+    branches="Semitic; Egyptian; Chadic (Western Chadic)",
+    non_semitic_branches="2", viewed="2026-10-03",
+    quote="Proto-Afro-Asiatic: *dam- Meaning: blood")
+
+
+class ValidateAfroasiaticTest(ValidateTest):
+    def setUp(self):
+        super().setUp()
+        self.cols = v.COLUMNS["proto_afroasiatic.tsv"]
+        self.path = self.root / "data" / "proto_afroasiatic.tsv"
+
+    def row(self, **changes):
+        rows = blank_rows(self.cols, self.meanings)
+        rows[6].update(PAA_ROW)
+        rows[6].update(changes)
+        return rows
+
+    # The Hattic-specific tests do not apply to this file.
+    test_cited_secure_form_counts = None
+    test_form_without_provenance_rejected = None
+    test_cited_without_page_and_location_rejected = None
+    test_uncollated_cannot_count = None
+    test_doubtful_cannot_count = None
+    test_grammatical_slot_must_be_empty = None
+
+    def test_valid_row(self):
+        self.assertEqual(self.check(self.row()), [])
+
+    def test_semitic_only_rejected(self):
+        errors = self.check(self.row(branches="Semitic", non_semitic_branches="0"))
+        self.assertTrue(any("two branches" in e for e in errors))
+
+    def test_one_branch_rejected(self):
+        errors = self.check(self.row(branches="Egyptian", non_semitic_branches="1"))
+        self.assertTrue(any("two branches" in e for e in errors))
+
+    def test_non_semitic_count_must_agree(self):
+        errors = self.check(self.row(non_semitic_branches="3"))
+        self.assertTrue(any("non_semitic_branches must be 2" in e for e in errors))
+
+    def test_unknown_branch_rejected(self):
+        errors = self.check(self.row(branches="Semitic; Sumerian", non_semitic_branches="1"))
+        self.assertTrue(any("six branches" in e for e in errors))
+
+    def test_lower_level_rejected(self):
+        errors = self.check(self.row(level="Proto-Chadic"))
+        self.assertTrue(any("Proto-Afro-Asiatic" in e for e in errors))
+
+    def test_view_date_required(self):
+        errors = self.check(self.row(viewed=""))
+        self.assertTrue(any("viewed" in e for e in errors))
+
+    def test_quote_must_carry_gloss(self):
+        errors = self.check(self.row(quote="Proto-Afro-Asiatic: *dam- Meaning: red"))
+        self.assertTrue(any("quote" in e for e in errors))
+
+    def test_quote_without_form_rejected(self):
+        rows = blank_rows(self.cols, self.meanings)
+        rows[6].update(quote="Proto-Afro-Asiatic: *dam- Meaning: blood")
+        self.assertTrue(any("form is empty" in e for e in self.check(rows)))
+
+
 if __name__ == "__main__":
     unittest.main()
