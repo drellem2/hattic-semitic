@@ -2,7 +2,7 @@
 
 **Hypothesis:** Hattic is a sister language of Proto-Semitic.
 **Procedure:** [`docs/preregistration.md`](../docs/preregistration.md), with
-amendments A1–A3, applied mechanically by
+amendments A1–A3 (and A4–A7 for the Proto-Afroasiatic arm), applied mechanically by
 [`analysis/compare.py`](../analysis/compare.py). The full output, including
 every compared slot and alignment, is in
 [`analysis/results.md`](../analysis/results.md) and
@@ -25,19 +25,41 @@ This result is not "no support". It says nothing for or against the
 hypothesis. No resemblance among the nine compared pairs is offered as
 suggestive, and none would be at this n.
 
-### Amendment A4: the Proto-Afroasiatic arm
+### Amendment A4: the Proto-Afroasiatic arm, and the combined reading
 
-A4 was committed while this comparison was being prepared. It adds a second
-arm, Hattic vs Proto-Afroasiatic, and says that only that arm can give support
-to the sister reading. A4 leaves the Proto-Semitic arm unchanged. The result
-above is therefore the registered result of the Hattic–Proto-Semitic
-comparison, reported first, as A4 requires.
+A4 adds a second arm, Hattic vs Proto-Afroasiatic (PAA), and says that only
+that arm can give support to the sister reading. A4 leaves the
+Proto-Semitic arm unchanged. The result above is therefore the registered
+result of the Hattic–Proto-Semitic comparison, reported first, as A4
+requires.
 
-**The PAA arm has not been run.** No PAA form has been collected. Its n cannot
-exceed the 17 qualifying Hattic slots, which is below 30 (A4.6), so it will
-land in "cannot decide" whatever the PAA forms are. Under A4.5, a PAA arm that
-cannot decide and a PS arm that cannot decide combine to **the data cannot
-decide**. The combined reading is the same as the PS-arm result.
+**The PAA arm has now been run** (mg-51839), on the primary source, the
+Militarev–Stolbova database (A5), and, as A4.1 requires, on Orel & Stolbova
+1995 (HSED, A6) alone as a sensitivity run that is never decisive. Its
+outcome is **the data cannot decide**: n = 17 < 30. That was fixed by A4.6
+before any PAA form was collected, and it follows from n alone. The full
+procedure was run anyway for the §6.2 items, and it found no candidate pair
+at all, so R = 0 and the shuffle p is 1.000. The HSED run agrees (n = 16,
+R = 0). At n = 17, no resemblance would be suggestive and none is offered as
+such. Details are in [the PAA arm section](#the-proto-afroasiatic-arm-a4)
+below.
+
+**Combined reading (A4.5): the data cannot decide.** The PAA arm cannot
+decide and the PS arm cannot decide. Neither arm supports, so the summary
+does not lead with "PS-only support".
+
+| | PS arm (mg-462a2) | PAA arm, primary (A5) | PAA arm, HSED sensitivity (A6; never decisive) |
+|---|---|---|---|
+| n (slots compared) | 9 | **17** | 16 |
+| monoconsonantal Hattic stems (never scored) | 5 | 6 | 6 |
+| candidate pairs (§3.3) | 0 | 0 | 0 |
+| regular correspondences | 0 | 0 | 0 |
+| R, r | 0, 0.000 | 0, 0.000 | 0, 0.000 |
+| Control A p (1000 derangements, seed 20261003) | 1.000 | 1.000 | 1.000 |
+| Control B: n_PU, R_PU, r_PU (shared, A4.3) | 13, 0, 0.000 | 13, 0, 0.000 | 13, 0, 0.000 |
+| morphology items testable (of 8; 4 needed) | 1 | 3 | 0 |
+| non-trivial morphology matches | 0 | 0 | 0 |
+| outcome category | cannot decide | **cannot decide** | cannot decide |
 
 ## Hattic–Proto-Semitic vs the controls
 
@@ -121,10 +143,126 @@ forms, and in any case there is no support for anything to rest on.
   exploratory run, which adds the doubtful glosses, is in the table above.
   It gives n = 12 and R = 0.
 
+## The Proto-Afroasiatic arm (A4)
+
+Procedure: A4 with A5 (primary source) and A6–A7 (sensitivity source),
+applied by the same script, [`analysis/compare.py`](../analysis/compare.py),
+with the same matching procedure, Control A and Control B. The full output,
+with every compared slot and alignment, is in
+[`analysis/results_paa.md`](../analysis/results_paa.md) and
+[`analysis/results_paa.json`](../analysis/results_paa.json).
+
+### Runs (§6.2 for the PAA arm)
+
+| run | primary: n | R | p | HSED: n | R | p | n_PU | R_PU | category (both) |
+|---|---|---|---|---|---|---|---|---|---|
+| main (A3 Hattic, cited + secure) | **17** | 0 | 1.000 | 16 | 0 | 1.000 | 13 | 0 | cannot decide |
+| **collated-only** (uncollated forms excluded) | 17 | 0 | 1.000 | 16 | 0 | 1.000 | 13 | 0 | cannot decide |
+| `exact` pairs only (§2) | 14 | 0 | 1.000 | 13 | 0 | 1.000 | 10 | 0 | cannot decide |
+| PAA forms with ≥ 2 non-Semitic branches (A4.1) | 14 | 0 | 1.000 | 14 | 0 | 1.000 | 13 | 0 | cannot decide |
+| strict §1.1 (Soysal 2004 only) | 0 | 0 | — | 0 | 0 | — | 0 | 0 | cannot decide |
+| exploratory: doubtful glosses included, outside the decision | 21 | 0 | 1.000 | 18 | 0 | 1.000 | 16 | 0 | — |
+
+The lexical criterion (§4.3, A4.3) is not met: R = 0 < 5. n_PU = 13 < 20,
+so Control B is uninformative and condition 3 becomes p ≤ 0.01, and
+p = 1.000. §6 uses the lexical strand only when n ≥ 30, so it does not
+change the category. The shuffle distribution is R_shuffle = 0 in all 1000
+derangements, in every run.
+
+### The §6.2 items, PAA arm
+
+- **Candidate list:** empty, in every run, on both sources. Of the 17
+  primary-source slots:
+  - 6 have a Hattic stem with only one consonant, and §3.3 never scores
+    them: 3 *to go*, 25 *to do/make*, 26 *house*, 51 *child*, 53 *to give*,
+    75 *to eat*.
+  - 5 have exactly one scored class match, and a candidate needs two:
+    6 *tongue* aleb ~ \*lis- (l~l), 13 *rain* tumil ~ \*ʒaw- (ʒ~t, T~S),
+    63 *soil* štarrazil ~ \*ʔariĉ̣- (ĉ̣~t), 73 *to take* miš ~ \*ʔaḫuǯ-
+    (ǯ~š), 80 *wood* ziḫar ~ \*sasug- (s~z).
+  - 6 have no class match at all: 27, 32, 48, 57, 82, 89.
+
+  On HSED, 6 are monoconsonantal and 5 have one match (6, 13, 27, 48, 63).
+  The single matches are listed because §6.2 asks for the full list, not
+  because they mean anything. One matching consonant is what §3.3 rules out
+  as too likely by chance.
+- **Removed items (§3.4, loans, onomatopoeia):** none. There were no
+  candidates to remove.
+- **Regular correspondences:** none. With no candidate pair, no
+  correspondence is observed at all.
+- **`exact`-only, and ≥ 2 non-Semitic branches:** in the table above. Both
+  give R = 0.
+- **Morphology** (the database for the primary run, as A4.1 requires because
+  Hayward 2000 could not be viewed; HSED for the sensitivity run):
+
+  | item | Hattic | PAA (database) | testable | result |
+  |---|---|---|---|---|
+  | 1 1sg | doubtful | \*-aku, \*ʔan- | no | |
+  | 2 2sg | ú-un independent; ú-/u- prefix | \*ʔan- | yes | ú-un ~ \*ʔan-: n agrees, with ʔ unaligned (one consonant). ú- has no consonant |
+  | 3 3sg | li-e-, te-, le-; -e/-i̯a | — | no | |
+  | 4 1pl | ai-/(n)i- prefix | \*ʔan- | yes | n agrees, with ʔ unaligned (one consonant) |
+  | 5 negation | taš- prefix | \*ʔVl-, \*ʔy-, \*ma | yes | consonants differ in all three |
+  | 6–8 | taš-te-; u̯aₐ-, eš-; — | — | no | |
+
+  - **Hattic–PAA:** 3 of 8 items are testable, and §5.3 needs 4, so the
+    morphology strand is **not testable**. The database does not say whether
+    any of these forms is bound or independent, so agreement in position
+    (§5.2) cannot be shown, and no match is counted. Even if position were
+    granted, the result would not change. Each agreement is a single
+    consonant, which is trivial. The two cells that agree (item 2,
+    independent; item 4, prefix) are in different Hattic position series, so
+    they do not make a paradigm match. Non-trivial matches: 0.
+  - **HSED:** 0 items testable. HSED leaves out pronouns and particles.
+  - **Hattic–Proto-Uralic:** as in the PS arm. 2 items testable, 0
+    non-trivial.
+- **Uncollated fraction:** 0 of 24 Hattic forms, 0 of 80 primary PAA forms,
+  0 of 75 HSED forms. The collated-only run is identical to the main run.
+  The exploratory run is in the table above (n = 21, R = 0). It is not part
+  of the decision.
+
+### Readings fixed for the PAA arm
+
+A4.4 leaves some details to the implementation. These readings were fixed in
+`analysis/compare.py` before its first PAA run, and were not changed after
+it. They are listed because they are choices.
+
+- **Alternatives.** Where a cell gives alternative whole forms (`~`, or `/`
+  between starred forms, as in \*baʔ-/\*baw-/\*bay), the first is compared.
+  This extends A4.4's "first-listed" rule for one position to whole forms.
+- **Affixes.** In both sources, a hyphen inside a reconstruction separates
+  morphemes (\*ʔa-pay-, \*ḥar-Vk-, \*ʔad-Vm-). That is read as the source
+  marking an affix or root extension, which A4.4 leaves out. The root is
+  taken to be the first hyphen-delimited part with at least two consonants.
+  This touches only one compared slot, exploratory slot 68 (\*ʔad-Vm-).
+- **Symbols not in the A4.4 table.** The cover symbols H ("a laryngeal") and
+  K ("a velar") are read as H and K. HSED's raised hooks, written ˀ and ᶜ in
+  the data (A6), are the glottal stop and ʿayin, so they are H.
+- **Geminates** (\*rabb-) are read as written.
+- **Morphology.** The §3.2 guttural rule (one reference guttural may be left
+  unaligned) is applied in morphology too, as it is in the lexicon. It does
+  not touch the PS or PU morphology, which have no gutturals.
+
+Each inferred symbol was re-run under every class and under "matches
+nothing". Geminates were also read as single, and the PAA affixes kept: 62
+re-runs per source. **R, R_PU and the category are the same in every
+re-run.** The only re-run in which a candidate appears is the Control B one
+already reported for the PS arm (Proto-Uralic *d* read as M).
+
+**Clerical note on the exploratory n.** `data/README.md` gave the
+exploratory Hattic–PAA overlaps as 22 (primary) and 19 (HSED). Those counts
+include slot 11 *to come*, whose doubtful Hattic form (a-ša-a) has no stem,
+so it cannot be compared. The script compares stems, as it does in the PS
+arm, so the exploratory runs have n = 21 and n = 18. The decision set is
+not affected.
+
 ## Deviations from the registration
 
-**None.** No threshold, list, latitude or class was changed after the data
-were seen. The A3 source substitutions were committed before any data.
+**None, in either arm.** No threshold, list, latitude or class was changed
+after the data were seen. The A3 source substitutions were committed before
+any data, and A4–A7 before any PAA comparison. The PAA arm's
+implementation readings are listed above. The PS arm's, below, are
+unchanged, and its output files are byte-identical to the ones committed in
+mg-462a2.
 
 The registration leaves some details to the implementation. These readings
 were fixed in `analysis/compare.py` before its first run. They are listed
@@ -185,6 +323,13 @@ re-collation on both sides: Soysal 2004 for Hattic, and Kogan 2011 or the SED
 for Proto-Semitic. Control B also stays uninformative until n_PU ≥ 20; it is
 13 now.
 
+For the PAA arm the ceiling is far higher. The primary database fills 80 of
+the 96 slots, and all 17 qualifying Hattic slots already have a PAA form.
+The PAA arm's n is therefore limited by the Hattic side alone. It reaches 30
+once 13 more of those 80 slots have a cited, securely glossed Hattic form.
+Soysal 2004 is the obvious place to look for them. How many it would supply
+is not known, for the reason given above.
+
 Any such re-collation must be recorded as a new dated amendment, made before
 the comparison is re-run (see [`data/README.md`](../data/README.md)). After
 that, `python3 analysis/compare.py` reproduces every number here.
@@ -192,6 +337,6 @@ that, `python3 analysis/compare.py` reproduces every number here.
 ## Reproduce
 
 ```
-python3 analysis/compare.py      # validates data/, writes analysis/results.{md,json}
+python3 analysis/compare.py      # validates data/, writes analysis/results.{md,json} and results_paa.{md,json}
 python3 -m unittest analysis/test_compare.py analysis/test_validate_data.py
 ```
