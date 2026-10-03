@@ -102,7 +102,9 @@ All are far below the n ≥ 30 that §6 and A4.2 require before a decision.
 The PAA arm is limited by the Hattic side: the database fills 80 slots, but
 only 17 Hattic slots qualify. If doubtful Hattic forms are included as well
 (exploratory), the overlaps are 12 (PS), 22 (PAA), 19 (PAA from HSED) and
-17 (PU).
+17 (PU). The exploratory runs compare 12, 21, 18 and 16 slots: the last
+three overlaps include slot 11 *to come*, whose doubtful Hattic form
+(a-ša-a) is unsegmented and has no stem, so it cannot be compared.
 
 ### The two Proto-Afroasiatic lists compared
 

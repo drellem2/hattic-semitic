@@ -3,6 +3,25 @@
 Testing the hypothesis that **Hattic is a sister language of Proto-Semitic**,
 using the traditional comparative method.
 
+## Result
+
+**The data cannot decide.** Only 17 Hattic basic-vocabulary words could be
+sourced, with a secure gloss, from editions that are openly viewable. The
+standard Hattic lexicon, Soysal 2004, could not be opened. The test was
+fixed in advance to need at least 30 compared words. Hattic was compared
+with Proto-Semitic (9 slots, from Huehnergard's *American Heritage
+Dictionary* appendix of Semitic roots) and with Proto-Afroasiatic (17
+slots, from the Militarev–Stolbova database, with Orel & Stolbova 1995 as a
+check). Proto-Afroasiatic reconstructions are themselves contested. Both
+comparisons fall short of 30, so the outcome follows from the counts alone,
+and the combined reading is "cannot decide". As description only, not as
+evidence: no comparison, and no control, produced a single candidate
+cognate. At these numbers the pre-registration does not let that count
+against the hypothesis. Access to Soysal 2004 or Klinger 1996, or newly
+glossed Hattic vocabulary, could change the answer, and the pipeline is
+ready to re-run. The full write-up is in
+[`docs/findings.md`](docs/findings.md).
+
 ## Hypothesis
 
 Hattic — the non-Indo-European language of central Anatolia known from
