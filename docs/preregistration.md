@@ -955,3 +955,28 @@ rules. Nothing here changes the primary arm or its outcome.
 **File.** The list is `data/proto_afroasiatic_hsed.tsv`. It has the same
 columns as `data/proto_afroasiatic.tsv` and is validated by the same checks,
 except as rules 5 and 7 state.
+
+### A7 — 2026-10-03: two clerical points on A6, found while filling the HSED list
+
+**State when made:** the HSED slot list (`data/proto_afroasiatic_hsed.tsv`)
+had been filled and committed under A6. No comparison had been run on any
+PAA list. **This amendment changes no rule and no slot.** It records two
+things learned while filling, so that a reader of A6 is not misled.
+
+1. **The Index of Meanings.** A6 rule 1 says the index "also lists the
+   meanings of reflexes". Its own preface (p. 557) says only that it
+   "includes English translations of Hamito-Semitic forms adduced in the
+   Dictionary. Numbers refer to Hamito-Semitic reconstructions." Whether it
+   also lists reflex glosses was not established. This does not matter for
+   any slot: the index was used only to find candidates (A6 rule 9), and
+   every candidate was judged by the gloss printed in its heading.
+2. **Language labels on a reflex line.** A6 rule 4 counts a branch by the
+   label of its reflex line, and names "Omot" as the Omotic label. A few
+   entries begin an Omotic line with a language abbreviation instead, for
+   example "Ome" (Ometo) in entry 2061. Under A6 as written, such a line
+   does not count. This was applied, not changed. It decides one slot:
+   slot 40 *fish* is filled by entry 1085, and the row's notes state that
+   entry 2061 would fill it if its "Ome" line were counted as Omotic. No
+   other filled slot depends on such a line. Every entry that would overtake
+   a chosen entry with one more branch was re-read on the page image, and
+   none of them has such a line.
