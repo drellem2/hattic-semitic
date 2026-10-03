@@ -463,5 +463,76 @@ recorded.
 
 ## 9. Amendments
 
-None. Any amendment is added here with its date, the reason, and a statement
+Any amendment is added here with its date, the reason, and a statement
 of whether any data had been collected or any comparison run when it was made.
+
+### A1 — 2026-10-03: Leipzig–Jakarta list checked; no change
+
+**State when made:** no form of any language entered in `data/`; no
+comparison run.
+
+The §1 transcription was checked against a viewed published copy: the
+Concepticon edition of the list, `Tadmor-2009-100`
+(<https://github.com/concepticon/concepticon-data/blob/master/concepticondata/conceptlists/Tadmor-2009-100.tsv>,
+fields `NUMBER` and `ENGLISH`), which reproduces the list of Haspelmath &
+Tadmor 2009 / Tadmor, Haspelmath & Taylor 2010. All 100 meanings agree with
+the §1 table in content and numbering. (The published list has tied ranks;
+the slot numbers of §1 are the list's running numbers, not its ranks.) No
+slot changes.
+
+### A2 — 2026-10-03: what `cited` means
+
+**State when made:** no form entered in `data/`; no comparison run. Made on
+the project reviewer's instruction, before data collection.
+
+`cited` (§1.2) means that the analyst **viewed the source text during data
+collection** — a scan, an open-access PDF, a publisher or repository page, a
+digitised dictionary — and records where (URL or repository identifier) and
+the page or entry. A form known from memory is `uncollated`, even if the
+analyst can name the book and page it should be in. This tightens §1.2; it
+does not relax it. The same standard is applied to the Proto-Semitic and
+Proto-Uralic forms, and their collated fractions are reported, although §1.2
+only gates the Hattic side.
+
+### A3 — 2026-10-03: sources that could not be viewed, and their substitutes
+
+**State when made:** the openly viewable sources had been identified and
+their tables of contents read; no form had been extracted from any of them,
+none entered in `data/`, and no comparison run.
+
+The governing Hattic source, Soysal 2004, is held by the Internet Archive
+only as a lending-restricted item (its text and search are not open), and no
+other open copy was found; Klinger 1996 was not found in any open copy.
+Kogan 2011, the SED and Huehnergard 2019 were not found in any open copy.
+Under the original §1.1 rule, therefore, **no Hattic slot can be filled from
+Soysal 2004**, and the strict count of qualifying Hattic slots is 0. That
+count is reported as the primary figure.
+
+So that the data are still worth assembling, the following substitutions are
+made. They change sources, so they are amendments, not clerical corrections.
+Results computed under them are to be reported **as results under A3**, next
+to the strict figure, never in place of it.
+
+- **Hattic (§1.1, §7.2).** Slots are filled from viewed sources in this order:
+  (1) Schuster 1974 (named in §7.2; a bilingual edition, so its glosses rest
+  on the Hittite parallel text); (2) A. Kammenhuber, "Hattisch", in
+  J. Friedrich et al., *Altkleinasiatische Sprachen*, HdO I.2.1–2/2, Leiden:
+  Brill 1969, pp. 428–546. Within a source, the §1.1 tie-breakers apply.
+  A form counts under §1.2 only if the viewed source gives the gloss without
+  any doubt marker (in German: "?", "unklar", "unsicher", "vielleicht",
+  "wohl", "etwa", "vermutlich", or a gloss offered only from context). Both
+  sources predate Soysal 2004; a gloss they give may since have been revised,
+  and that risk is stated with the results.
+- **Proto-Semitic (§7.1).** Only the third-precedence source, Huehnergard
+  2011 (the *American Heritage Dictionary* Semitic-roots appendix, viewed
+  online), is reachable. Slots are filled from it; that a higher-precedence
+  source would have given a different reconstruction cannot be excluded and is
+  recorded per slot. Only reconstructions the appendix labels
+  **Common Semitic** (or Proto-Semitic) are used; forms it labels West,
+  Central or Northwest Semitic belong to lower nodes and do not fill a slot,
+  as §4.2 already requires for Proto-Uralic. For morphology (§5), Huehnergard
+  2019 is replaced by whatever viewed Huehnergard 2011 material gives;
+  items it does not give are empty.
+- **Proto-Uralic (§4.2).** Unchanged in substance: Sammallahti 1988 (in a
+  scan of Sinor 1988) and the UEW (Uralonet, or a scan of the printed volume)
+  are both openly viewable. Each form records which was used.
