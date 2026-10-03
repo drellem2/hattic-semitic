@@ -753,3 +753,97 @@ meanings the primary PAA source reconstructs at all, which is likely to be
 fewer than the PS sources cover. The PAA arm may therefore never reach
 n ≥ 30. That cost is accepted: it is the result of not lowering the
 threshold, and it will be reported as such rather than worked around.
+
+### A5 — 2026-10-03: the primary Proto-Afroasiatic source, and how A4.1 is applied to it
+
+**State when made:** A4 committed. To check viewability, the
+Militarev–Stolbova database was opened and its record list read in full
+(2671 records), and for each slot the records whose gloss contains the slot
+word were listed. **No slot had been filled** and nothing had been entered in
+`data/`. No comparison had been run. Orel & Stolbova 1995, Ehret 1995 and
+Hayward 2000 were checked for viewability only, by their Internet Archive
+metadata and, for Orel & Stolbova, the title pages. No form was read from
+any of them.
+
+**Primary source: item 1 of A4.1, the Militarev–Stolbova database.** It is
+the first source in A4.1's order that could be viewed, so A4.1 makes it the
+primary source, with no choice involved. It was opened on 2026-10-03 at
+<https://starlingdb.org/cgi-bin/response.cgi?root=config&basename=%2fdata%2fsemham%2fafaset&first=1>.
+The old host, `starling.rinet.ru`, now redirects to `starlingdb.org`. Every
+record carries a reconstruction, labelled "Proto-Afro-Asiatic", and a
+"Meaning" field, and lists its reflexes under one field for each branch or
+subgroup.
+
+**Viewability of the other sources** (this decides A4.1's sensitivity run
+and the morphology source):
+
+| source | viewable? | consequence |
+|---|---|---|
+| Orel & Stolbova 1995 | **Yes.** Full text and scan, Internet Archive `vladimir-e.-orel-olga-v.-stolbova-hamito-semitic-etymological-dictionary-materia` (not lending-restricted) | It is the next source after the primary, so A4.1 requires the whole arm also to be run on it alone, as a sensitivity check that is never decisive. Its slot list is a separate data file. It is not assembled in the same commit as the primary list (see `data/README.md`). |
+| Ehret 1995 | A full scan is on the Internet Archive (`ehret-reconstructing-proto-afroasiatic-proto-afrasian-vowels-tone-consonants-and-vocabulary-1995`). The library copy, `reconstructingpr0000ehre`, is lending-restricted | Not used. A4.1 uses only the primary and the next source after it. |
+| Hayward 2000 | **No.** The only copy found, Internet Archive `africanlanguages0000unse_e8w2`, is lending-restricted (its PDF and text are private) | Under A4.1, PAA morphology comes from the primary lexical source, the database. |
+
+**Clerical corrections to A4.1's bibliographic details**, from what was
+viewed:
+
+- **Item 1.** The StarLing index lists it as "Afroasiatic etymology",
+  "Compiled by Alexander Militarev, Olga Stolbova", dated **2007-04-12**.
+  Its reconstruction label is "Proto-Afro-Asiatic", not "Afrasian". A4.1
+  said the database "is still being revised". The only date the index gives
+  is 2007-04-12, and its description page (`bdescr.cgi`) returned an empty
+  page, so whether it is still revised could not be checked. The rule that
+  each form records the date it was viewed and a verbatim quote stands.
+- **Item 2.** The title page and CIP data read: V. E. Orel and O. V.
+  Stolbova, *Hamito-Semitic Etymological Dictionary: Materials for a
+  Reconstruction*, Leiden, New York and Köln: E. J. Brill, 1995 (Handbuch der
+  Orientalistik, Erste Abteilung, Bd. 18; ISBN 90 04 10051 2). This agrees
+  with A4.1.
+- **Item 3 and Hayward 2000.** The Internet Archive metadata agree with A4.1:
+  Berkeley, University of California Press, 1995; and Cambridge University
+  Press, 2000. The UCPL series number and Hayward's chapter pages could not
+  be checked.
+
+**How A4.1's slot rules are read for this source.** These are
+interpretations made before any slot was filled. They add no source and no
+latitude.
+
+1. **Gloss.** The gloss of the reconstruction is the record's "Meaning"
+   field. Reflex glosses are never used as the gloss. The field is split into
+   components at "," and ";". A component **is the slot meaning** if it is
+   the slot word, or a §2 equivalent of it. A leading "to", a trailing "?" on
+   an interrogative ("what?"), and a trailing "(?)" are ignored, and the
+   "(?)" is recorded in the notes. Anything else in the component makes it a
+   different meaning. For example, "go away", "big reptile", "(lower) back",
+   "be dark" and "k. of insect (bee, fly; locust)" do not match. Such
+   near misses are listed in `notes` and do not fill the slot.
+2. **"Glossed with the slot meaning alone"** (first tie-breaker) means that
+   every component is the slot meaning or a §2 equivalent of it, as in "walk,
+   go" for *to go* or "cry, weep" for *to cry/weep*.
+3. **Part of speech (§2).** Where a gloss word is an English homograph
+   (*fly* insect or verb; *hide* noun or verb), the other components of the
+   same gloss decide which it is: "bee; fly" is a noun, "jump, fly" a verb.
+   If the gloss is that word alone, the record's own reflex glosses decide
+   the part of speech, and only that. The decision is recorded in the notes.
+4. **Branches.** Database fields count towards branches as follows.
+   Semitic: Semitic. Egyptian: Egyptian. Berber: Berber. Chadic: Western,
+   Central and East Chadic. Cushitic: Beḍauye (Beja), Central Cushitic
+   (Agaw), Saho-Afar, Low East Cushitic, High East Cushitic, Warazi (Dullay),
+   Mogogodo (Yaaku), Dahalo (Sanye) and South Cushitic. Omotic: Omotic. A
+   branch counts if the record has a reflex field for it, even one the
+   source marks "(?)", which is then noted. Branch names that appear only in
+   the record's "Notes" field do not count for lexical slots: the A4.1
+   attestation rule is about the source's reflex list. The "Borean
+   etymology" link is not a branch.
+5. **Level.** Every record is labelled "Proto-Afro-Asiatic", so every record
+   meets A4.1's level rule. A reconstruction marked "(?)", or one whose notes
+   question its Common Afroasiatic status, still fills a slot if it meets
+   A4.1, as Proto-Semitic forms with a doubtful root shape do. The doubt is
+   quoted in the notes.
+6. **Source order** (last tie-breaker) is the database's own record order,
+   as its list view shows it. The record number `N` is the position in that
+   order, and the entry is cited by the list-view URL with `first=N`, whose
+   first record is that entry.
+7. **Morphology.** A record counts for a §5.1 item if its "Meaning" names
+   that function. Morphology has no branch rule (A4.1 says only "forms the
+   source gives as Proto-Afroasiatic"), so branches the record names only
+   in its notes are reported but not tested.
