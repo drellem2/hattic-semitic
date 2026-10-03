@@ -31,6 +31,7 @@ import csv
 import itertools
 import json
 import random
+import re
 import sys
 import unicodedata
 from pathlib import Path
@@ -79,6 +80,28 @@ PU_CLASS = {
 }
 PU_VOWELS = set("aeiouäåüöɨɜȣēāīōū")
 
+# A4.4, Proto-Afroasiatic, by articulation. Graphemes as the two PAA sources
+# write them; ˀ, ˁ and ᶜ are the A6 transcriptions of HSED's raised hooks for
+# the glottal stop and ʿayin. A grapheme not listed here is looked up again
+# with the glottalisation/emphasis marks (dot below, dot above) and the
+# labialisation mark ʷ removed, which puts glottalised, emphatic and
+# labialised consonants into the class of their plain counterpart (A4.4).
+PAA_CLASS = {
+    "p": "P", "b": "P", "f": "P",
+    "m": "M",
+    "t": "T", "d": "T",
+    "s": "S", "z": "S", "š": "S", "c": "S", "ʒ": "S", "č": "S", "ǯ": "S",
+    "ĉ": "S", "ś": "S", "ŝ": "S", "ɬ": "S", "ł": "S", "ṯ": "S", "ḏ": "S",
+    "k": "K", "g": "K", "q": "K",
+    "n": "N", "ñ": "N", "ŋ": "N",
+    "r": "R", "l": "R",
+    "w": "W", "y": "W", "j": "W",
+    "ʔ": "H", "ʕ": "H", "h": "H", "ḥ": "H", "ħ": "H", "x": "H", "ḫ": "H",
+    "ɣ": "H", "ġ": "H", "ˀ": "H", "ˁ": "H", "ᶜ": "H",
+}
+PAA_VOWELS = set("aeiouüəV")
+PAA_MARKS = ("̣", "̇", "ʷ")   # dot below, dot above, labialised
+
 # Symbols in the data that the class tables of §3.2 / §4.2 do not list.
 # The class given here is the analyst's reading, fixed before the first run;
 # `inferred_symbol_sensitivity` re-runs the comparison under every possible
@@ -91,6 +114,9 @@ INFERRED = {
         "ṣ́": "S",             # emphatic lateral sibilant (ṣ series)
     },
     "pu": {"c": "S", "d": "T", "γ": "H"},
+    # Capital H and K are the PAA sources' cover symbols for "a laryngeal"
+    # and "a velar" of unknown identity (A4.4 does not list them).
+    "paa": {"H": "H", "K": "K"},
 }
 GUTTURAL = "H"
 
@@ -168,6 +194,82 @@ def pu_consonants(form, classes=None, collapse_geminates=False):
             continue
         prev = g
         c = classes.get(g)
+        out.append(Seg(g, c, c == GUTTURAL))
+    return out
+
+
+def paa_class(g, classes):
+    """A4.4 class of one PAA grapheme, or None if it cannot be placed."""
+    if g in classes:
+        return classes[g]
+    base = unicodedata.normalize("NFD", g)
+    for mark in PAA_MARKS:
+        base = base.replace(mark, "")
+    return classes.get(unicodedata.normalize("NFC", base))
+
+
+def paa_root_chunk(form):
+    """Drop what the source marks as an affix or root extension (A4.4): in
+    both PAA sources a hyphen inside a reconstruction separates morphemes
+    (*ʔa-pay-, *ḥar-Vk-, *ʔad-Vm-). The root is the first hyphen-delimited
+    part with at least two consonants, else the first with any."""
+    parts = [p for p in form.split("-") if p]
+    if len(parts) <= 1:
+        return "".join(parts)
+
+    def n_cons(p):
+        return sum(1 for g in graphemes(p)
+                   if g not in PAA_VOWELS and g not in "/")
+    for k in (2, 1):
+        for p in parts:
+            if n_cons(p) >= k:
+                return p
+    return parts[0]
+
+
+def paa_consonants(form, classes=None, keep_affixes=False,
+                   collapse_geminates=False):
+    """Consonants of a PAA reconstruction (A4.4), in the source's notation.
+
+    Of alternative forms (`~`, or `/` between starred forms) the first is
+    taken; parenthesised (optional) segments are left out; of alternatives
+    for one position (`w/y`) the first-listed is used; affixes and root
+    extensions marked by an internal hyphen are left out (`paa_root_chunk`);
+    vowels, including the cover vowel V, are not compared."""
+    classes = classes or {**PAA_CLASS, **INFERRED["paa"]}
+    f = unicodedata.normalize("NFC", form).split("~")[0].strip()
+    f = f.split("/*")[0]
+    while True:
+        g = re.sub(r"\([^()]*\)", "", f)
+        if g == f:
+            break
+        f = g
+    f = f.replace("*", "").strip()
+    if not keep_affixes:
+        f = paa_root_chunk(f)
+    gs = []
+    for g in graphemes(f):
+        if g == "ʷ" and gs:
+            gs[-1] += g
+        else:
+            gs.append(g)
+    out, prev, skip_next = [], None, False
+    for g in gs:
+        if skip_next:
+            skip_next = False
+            continue
+        if g == "/":
+            skip_next = True
+            continue
+        if g == "-":
+            continue
+        if g in PAA_VOWELS:
+            prev = None
+            continue
+        if collapse_geminates and g == prev:
+            continue
+        prev = g
+        c = paa_class(g, classes)
         out.append(Seg(g, c, c == GUTTURAL))
     return out
 
@@ -308,7 +410,8 @@ def hattic_selected(hattic, mode):
 
 
 def build_items(hrows, ref, ref_kind, exact_only=False, classes=None,
-                collapse_geminates=False):
+                collapse_geminates=False, min_non_semitic=0,
+                keep_affixes=False):
     classes = classes or {}
     items = []
     for s in sorted(hrows):
@@ -317,9 +420,16 @@ def build_items(hrows, ref, ref_kind, exact_only=False, classes=None,
             continue
         if exact_only and "permitted-shift" in (hrows[s]["match"], rr["match"]):
             continue
+        if (min_non_semitic
+                and int(rr["non_semitic_branches"]) < min_non_semitic):
+            continue
         if ref_kind == "ps":
             root = rr["root"]
             refc = ps_consonants(root, classes.get("ps"))
+        elif ref_kind == "paa":
+            root = rr["form"]
+            refc = paa_consonants(root, classes.get("paa"), keep_affixes,
+                                  collapse_geminates)
         else:
             root = rr["form"]
             refc = pu_consonants(root, classes.get("pu"), collapse_geminates)
@@ -385,7 +495,21 @@ MORPH = {
         2: [{"form": "*tun", "position": "independent", "cons": ["t", "n"]}],
         4: [{"form": "mȣ̈", "position": "independent", "cons": ["m"]}],
     },
+    # A4.1/A5 rule 7: the Militarev-Stolbova database. It does not say
+    # whether a form is bound or independent, so position is "not stated".
+    "paa": {
+        1: [{"form": "*-aku", "position": "not stated", "cons": ["k"]},
+            {"form": "*ʔan-", "position": "not stated", "cons": ["ʔ", "n"]}],
+        2: [{"form": "*ʔan-", "position": "not stated", "cons": ["ʔ", "n"]}],
+        4: [{"form": "*ʔan-", "position": "not stated", "cons": ["ʔ", "n"]}],
+        5: [{"form": "*ʔVl-", "position": "not stated", "cons": ["ʔ", "l"]},
+            {"form": "*ʔy-", "position": "not stated", "cons": ["ʔ", "y"]},
+            {"form": "*ma", "position": "not stated", "cons": ["m"]}],
+    },
+    # A6 rule 11: HSED gives none of the eight items.
+    "paa_hsed": {},
 }
+UNSTATED = "not stated"
 MORPH_ITEMS = {1: "1sg", 2: "2sg", 3: "3sg", 4: "1pl", 5: "negation",
                6: "prohibitive", 7: "nominal plural", 8: "causative"}
 
@@ -393,10 +517,17 @@ MORPH_ITEMS = {1: "1sg", 2: "2sg", 3: "3sg", 4: "1pl", 5: "negation",
 def morph_compare(ref_kind):
     """§5.2-§5.3 for Hattic vs `ref_kind`. No regular correspondence exists
     (R = 0 in every run), so consonants agree by class match, aligned left to
-    right as in §3.3."""
+    right as in §3.3, with at most one reference guttural aligned with
+    nothing (§3.2). A reference form whose position the source does not state
+    cannot be shown to agree in position, so its match is not counted."""
     hcls = {**HATTIC_CLASS, **INFERRED["hattic"]}
-    rcls = ({**PS_CLASS, **INFERRED["ps"]} if ref_kind == "ps"
-            else {**PU_CLASS, **INFERRED["pu"]})
+    if ref_kind == "ps":
+        rcls = {**PS_CLASS, **INFERRED["ps"]}.get
+    elif ref_kind == "pu":
+        rcls = {**PU_CLASS, **INFERRED["pu"]}.get
+    else:
+        allp = {**PAA_CLASS, **INFERRED["paa"]}
+        rcls = lambda g: paa_class(g, allp)  # noqa: E731
     rows, cell_matches = [], []
     for item, name in MORPH_ITEMS.items():
         hs = MORPH["hattic"].get(item, [])
@@ -405,17 +536,29 @@ def morph_compare(ref_kind):
         comps = []
         for h, r in itertools.product(hs, rs):
             same_pos = h["position"] == r["position"]
-            aligned = list(zip(h["cons"], r["cons"]))
-            cons_agree = bool(aligned) and all(
-                class_match(hcls.get(a), rcls.get(b)) for a, b in aligned)
-            n_cons = len(aligned) if cons_agree else 0
+            best = None
+            skips = [None] + [j for j, x in enumerate(r["cons"])
+                              if rcls(x) == GUTTURAL]
+            for skip in skips:
+                rc = [x for j, x in enumerate(r["cons"]) if j != skip]
+                aligned = list(zip(h["cons"], rc))
+                agree = bool(aligned) and all(
+                    class_match(hcls.get(a), rcls(b)) for a, b in aligned)
+                key = (agree, len(aligned) if agree else 0, skip is None)
+                if best is None or key > best[0]:
+                    best = (key, agree, len(aligned) if agree else 0,
+                            None if skip is None else r["cons"][skip])
+            _, cons_agree, n_cons, skipped = best
             match = same_pos and cons_agree
-            comps.append({"hattic": h["form"], "ref": r["form"],
-                          "hattic_position": h["position"],
-                          "ref_position": r["position"],
-                          "position_agrees": same_pos,
-                          "consonants_agree": cons_agree,
-                          "matching_consonants": n_cons, "match": match})
+            comp = {"hattic": h["form"], "ref": r["form"],
+                    "hattic_position": h["position"],
+                    "ref_position": r["position"],
+                    "position_agrees": same_pos,
+                    "consonants_agree": cons_agree,
+                    "matching_consonants": n_cons, "match": match}
+            if skipped is not None:
+                comp["guttural_unaligned"] = skipped
+            comps.append(comp)
             if match:
                 cell_matches.append((item, h["position"], n_cons))
         rows.append({"item": item, "name": name, "testable": testable,
@@ -462,55 +605,87 @@ def outcome(n, lex_pass, morph_testable, morph_pass):
     return "support", "lexical and morphology strands pass"
 
 
-def evaluate(hrows, ps, pu, exact_only=False, classes=None,
-             collapse_geminates=False, shuffle=True):
-    items_ps = build_items(hrows, ps, "ps", exact_only, classes)
+ARM_KEY = {"ps": "hattic_semitic", "paa": "hattic_afroasiatic"}
+
+
+def evaluate(hrows, ref, pu, exact_only=False, classes=None,
+             collapse_geminates=False, shuffle=True, ref_kind="ps",
+             morph_kind=None, min_non_semitic=0, keep_affixes=False):
+    """One run of one arm: Hattic vs `ref` (Proto-Semitic, or for the A4
+    arm Proto-Afroasiatic), with Control A on that arm and Control B
+    (Hattic vs Proto-Uralic, the same for both arms, A4.3)."""
+    key = ARM_KEY[ref_kind]
+    morph_kind = morph_kind or ref_kind
+    items_ref = build_items(hrows, ref, ref_kind, exact_only, classes,
+                            collapse_geminates, min_non_semitic, keep_affixes)
     items_pu = build_items(hrows, pu, "pu", exact_only, classes,
                            collapse_geminates)
-    res_ps = run(items_ps)
+    res_ref = run(items_ref)
     res_pu = run(items_pu)
-    ctl = (shuffle_control(items_ps, res_ps["R"]) if shuffle
+    ctl = (shuffle_control(items_ref, res_ref["R"]) if shuffle
            else {"p": None})
-    m_ps, m_pu = morph_compare("ps"), morph_compare("pu")
-    lex_pass, conds = lexical_strand(res_ps["n"], res_ps["R"], ctl["p"],
-                                     res_ps["r"], res_pu["r"], res_pu["n"])
-    morph_testable = m_ps["testable"] >= MORPH_MIN_TESTABLE
-    morph_pass = (morph_testable and m_ps["nontrivial"] >= 2
-                  and m_ps["nontrivial"] - m_pu["nontrivial"] >= 2)
-    cat, why = outcome(res_ps["n"], lex_pass, morph_testable, morph_pass)
-    return {"hattic_semitic": res_ps, "hattic_uralic": res_pu,
+    m_ref, m_pu = morph_compare(morph_kind), morph_compare("pu")
+    lex_pass, conds = lexical_strand(res_ref["n"], res_ref["R"], ctl["p"],
+                                     res_ref["r"], res_pu["r"], res_pu["n"])
+    morph_testable = m_ref["testable"] >= MORPH_MIN_TESTABLE
+    morph_pass = (morph_testable and m_ref["nontrivial"] >= 2
+                  and m_ref["nontrivial"] - m_pu["nontrivial"] >= 2)
+    cat, why = outcome(res_ref["n"], lex_pass, morph_testable, morph_pass)
+    return {key: res_ref, "hattic_uralic": res_pu,
             "control_A": ctl, "lexical_conditions": conds,
             "lexical_pass": lex_pass,
-            "morphology": {"hattic_semitic": m_ps, "hattic_uralic": m_pu,
+            "morphology": {key: m_ref, "hattic_uralic": m_pu,
                            "testable": morph_testable, "pass": morph_pass},
             "outcome": cat, "outcome_reason": why}
 
 
-def signature(result):
+def combined_reading(paa, ps):
+    """A4.5: only the PAA arm can give support to the sister reading."""
+    if paa == "support":
+        return "support", f"PAA arm supports; PS arm: {ps}"
+    if paa == "no support":
+        lead = ("PS-only support, PAA arm fails; "
+                if ps == "support" else "")
+        return "no support", lead + "PAA arm: no support"
+    if ps == "no support":
+        return "no support", ("PAA arm cannot decide; the PS arm's "
+                              "no support stands")
+    lead = ("PS-only support, PAA arm cannot decide; "
+            if ps == "support" else "")
+    return ("the data cannot decide",
+            lead + f"PAA arm cannot decide; PS arm: {ps}")
+
+
+def signature(result, key="hattic_semitic"):
     """What a re-run could change: candidacy per slot, R, and the outcome."""
-    return {"candidates": [(k, p["slot"]) for k in ("hattic_semitic",
-                                                    "hattic_uralic")
+    return {"candidates": [(k, p["slot"]) for k in (key, "hattic_uralic")
                            for p in result[k]["pairs"] if p["candidate"]],
-            "R": result["hattic_semitic"]["R"],
+            "R": result[key]["R"],
             "R_PU": result["hattic_uralic"]["R"],
             "outcome": result["outcome"]}
 
 
-def inferred_symbol_sensitivity(hrows, ps, pu):
+def inferred_symbol_sensitivity(hrows, ref, pu, ref_kind="ps",
+                                morph_kind=None):
     """Re-run with every inferred symbol (INFERRED) set, one at a time, to
     every class and to 'matches nothing'; also with Proto-Uralic geminates
-    read as one consonant. Return every re-run whose candidates, R, R_PU or
+    read as one consonant (and, for the PAA arm, PAA geminates read as one
+    and PAA affixes kept). Return every re-run whose candidates, R, R_PU or
     outcome differ from the run as read."""
-    base = signature(evaluate(hrows, ps, pu, shuffle=False))
+    key = ARM_KEY[ref_kind]
+    kw0 = {"ref_kind": ref_kind, "morph_kind": morph_kind}
+    base = signature(evaluate(hrows, ref, pu, shuffle=False, **kw0), key)
     changed = []
     variants = []
-    for side, syms in INFERRED.items():
-        for sym in syms:
+    sides = ("hattic", ref_kind, "pu")
+    for side in sides:
+        for sym in INFERRED[side]:
             for cls in list(CLASSES) + [None]:
                 classes = {
                     "hattic": {**HATTIC_CLASS, **INFERRED["hattic"]},
                     "ps": {**PS_CLASS, **INFERRED["ps"]},
                     "pu": {**PU_CLASS, **INFERRED["pu"]},
+                    "paa": {**PAA_CLASS, **INFERRED["paa"]},
                 }
                 if cls is None:
                     classes[side].pop(sym)
@@ -518,10 +693,17 @@ def inferred_symbol_sensitivity(hrows, ps, pu):
                     classes[side][sym] = cls
                 variants.append((f"{side} {sym} -> {cls or 'nothing'}",
                                  {"classes": classes}))
-    variants.append(("Proto-Uralic geminates read as single",
-                     {"collapse_geminates": True}))
+    if ref_kind == "paa":
+        variants.append(("Proto-Uralic and PAA geminates read as single",
+                         {"collapse_geminates": True}))
+        variants.append(("PAA affixes and root extensions kept",
+                         {"keep_affixes": True}))
+    else:
+        variants.append(("Proto-Uralic geminates read as single",
+                         {"collapse_geminates": True}))
     for label, kw in variants:
-        sig = signature(evaluate(hrows, ps, pu, shuffle=False, **kw))
+        sig = signature(evaluate(hrows, ref, pu, shuffle=False, **kw0, **kw),
+                        key)
         if sig != base:
             changed.append({"variant": label,
                             **{k: sig[k] for k in sig if sig[k] != base[k]}})
@@ -657,7 +839,7 @@ def render(results, meanings):
     L.append("")
     L.append("Read as: " + "; ".join(
         f"{side} {s} → {c}" for side, d in INFERRED.items()
-        for s, c in d.items()) + ".")
+        if side in ("hattic", "ps", "pu") for s, c in d.items()) + ".")
     sens = results["sensitivity"]
     L.append("")
     L.append(f"Each was re-run under every class and under \"matches "
@@ -677,6 +859,197 @@ def render(results, meanings):
         for c in sens["changed"]:
             extra = {k: v for k, v in c.items() if k != "variant"}
             L.append(f"- {c['variant']}: {extra}")
+    L.append("")
+    return "\n".join(L)
+
+
+PAA_SOURCES = (
+    ("primary", "proto_afroasiatic.tsv", "paa",
+     "Primary source: Militarev & Stolbova database (A4.1, A5)"),
+    ("hsed", "proto_afroasiatic_hsed.tsv", "paa_hsed",
+     "Sensitivity source: Orel & Stolbova 1995, HSED (A4.1, A6) — "
+     "never decisive"),
+)
+PAA_RUNS = (
+    ("main", "Main run (A3 Hattic forms: cited + secure)"),
+    ("collated", "Collated-only (uncollated forms excluded)"),
+    ("exact", "`exact` pairs only (§2 sensitivity)"),
+    ("nonsem2", "PAA forms with at least two non-Semitic branches (A4.1)"),
+    ("exploratory", "Exploratory (doubtful Hattic glosses included; "
+                    "not part of the decision)"),
+    ("strict", "Strict reading of §1.1 (Soysal 2004 only)"),
+)
+
+
+def paa_arm(hattic, paa, pu, morph_kind):
+    """Every run A4 and §6.2 ask for, on one PAA list."""
+    kw = {"ref_kind": "paa", "morph_kind": morph_kind}
+    counts = hattic_selected(hattic, "counts")
+    runs = {
+        "main": evaluate(counts, paa, pu, **kw),
+        "collated": evaluate(hattic_selected(hattic, "collated"), paa, pu,
+                             **kw),
+        "exact": evaluate(counts, paa, pu, exact_only=True, **kw),
+        "nonsem2": evaluate(counts, paa, pu, min_non_semitic=2, **kw),
+        "exploratory": evaluate(hattic_selected(hattic, "exploratory"),
+                                paa, pu, **kw),
+        "strict": evaluate(hattic_selected(hattic, "strict"), paa, pu, **kw),
+    }
+    return {"runs": runs,
+            "sensitivity": inferred_symbol_sensitivity(
+                hattic_selected(hattic, "exploratory"), paa, pu, "paa",
+                morph_kind)}
+
+
+def render_paa(results, meanings):
+    K = ARM_KEY["paa"]
+    L = ["# Comparison output: the Proto-Afroasiatic arm (A4)", ""]
+    L.append("Generated by `python3 analysis/compare.py` from `data/`. Do not "
+             "edit by hand; the summary is in "
+             "[`../results/summary.md`](../results/summary.md). The "
+             "Proto-Semitic arm is in [`results.md`](results.md).")
+    L.append("")
+    L.append("Alignment notation: `ref~hattic` per aligned position, `+` a "
+             "class match (§3.2, A4.4), `×` a mismatch; `X~∅` a reference "
+             "guttural aligned with nothing (unscored). The PAA consonants "
+             "are those read from the reconstruction by A4.4: first of "
+             "alternative forms, optional (parenthesised) segments left out, "
+             "first-listed of alternatives for one position, affixes marked "
+             "by an internal hyphen left out, vowels (including V) not "
+             "compared.")
+    cr = results["combined"]
+    L.append("")
+    L.append(f"**PAA arm (primary source): {results['primary']['runs']['main']['outcome']}.** "
+             f"PS arm (mg-462a2, unchanged): {results['ps_outcome']}. "
+             f"**Combined reading (A4.5): {cr['reading']}** ({cr['reason']}).")
+    for src, _, _, title in PAA_SOURCES:
+        arm = results[src]
+        L.append("")
+        L.append(f"# {title}")
+        for key, name in PAA_RUNS:
+            res = arm["runs"][key]
+            ha, hu = res[K], res["hattic_uralic"]
+            ctl = res["control_A"]
+            L.append("")
+            L.append(f"## {name}")
+            L.append("")
+            L.append(f"Outcome category (§6, A4.2): **{res['outcome']}** "
+                     f"({res['outcome_reason']}).")
+            L.append("")
+            L.append("| | Hattic–Proto-Afroasiatic | "
+                     "Hattic–Proto-Uralic (Control B) |")
+            L.append("|---|---|---|")
+            L.append(f"| n (slots compared) | {ha['n']} | {hu['n']} |")
+            L.append(f"| candidates (§3.3) | {ha['candidates']} | "
+                     f"{hu['candidates']} |")
+            L.append(f"| R (regular cognate sets) | {ha['R']} | {hu['R']} |")
+            L.append(f"| r = R / n | {fmt_r(ha['r'])} | {fmt_r(hu['r'])} |")
+            p = "—" if ctl["p"] is None else f"{ctl['p']:.3f}"
+            L.append(f"| Control A shuffle p | {p} | not run (A4.3: "
+                     f"Hattic–PAA only) |")
+            if ctl.get("shuffles"):
+                L.append("")
+                L.append(f"Control A: {ctl['shuffles']} derangements, seed "
+                         f"{SEED}; R_shuffle distribution "
+                         f"{ctl['distribution']}; shuffles with R_shuffle ≥ "
+                         f"R_observed: {ctl['ge_observed']}.")
+            L.append("")
+            L.append("Lexical criterion (§4.3, A4.3): " + "; ".join(
+                f"{k}: {'yes' if v else 'no'}"
+                for k, v in res["lexical_conditions"].items())
+                     + f" → strand "
+                       f"{'passes' if res['lexical_pass'] else 'fails'}.")
+            if key not in ("main", "exploratory"):
+                continue
+            L.append("")
+            L.append("### Hattic–Proto-Afroasiatic: every compared slot")
+            L.append("")
+            L.append("| slot | Hattic stem | reference | alignment | "
+                     "matches | result |")
+            L.append("|---|---|---|---|---|---|")
+            for q in ha["pairs"]:
+                L.append(pair_line(q).replace(
+                    f"| {q['slot']} |",
+                    f"| {q['slot']} {meanings[q['slot']]} |", 1))
+            L.append("")
+            if ha["correspondences"]:
+                L.append("Correspondences in candidate pairs:")
+                L.append("")
+                L.append("| reference | Hattic | position | slots | "
+                         "independent | regular |")
+                L.append("|---|---|---|---|---|---|")
+                for c in ha["correspondences"]:
+                    L.append(f"| {c['ref']} | {c['hattic']} | "
+                             f"{c['position']} | {c['support_slots']} | "
+                             f"{c['independent']} | "
+                             f"{'yes' if c['regular'] else 'no'} |")
+            else:
+                L.append("No candidate pairs, so no correspondence sets and "
+                         "no correspondence recurs at all (N ≥ 3 needed).")
+        m = arm["runs"]["main"]["morphology"]
+        mm = m[K]
+        L.append("")
+        L.append(f"## Morphology (§5, A4.1): {mm['testable']} of 8 items "
+                 f"testable; {mm['nontrivial']} non-trivial matches")
+        L.append("")
+        L.append("| item | testable | Hattic | PAA | position | consonants "
+                 "| match |")
+        L.append("|---|---|---|---|---|---|---|")
+        for row in mm["items"]:
+            if not row["comparisons"]:
+                L.append(f"| {row['item']} {row['name']} | no | | | | | |")
+            for c in row["comparisons"]:
+                if c["position_agrees"]:
+                    pos = "agree"
+                elif c["ref_position"] == UNSTATED:
+                    pos = ("PAA position not stated by the source; "
+                           "agreement cannot be shown, not counted")
+                else:
+                    pos = (f"differ ({c['hattic_position']} vs "
+                           f"{c['ref_position']}), not counted")
+                cons = "agree" if c["consonants_agree"] else "differ"
+                if c["consonants_agree"]:
+                    cons += f" ({c['matching_consonants']})"
+                if c.get("guttural_unaligned"):
+                    cons += f"; {c['guttural_unaligned']}~∅ unscored"
+                L.append(f"| {row['item']} {row['name']} | "
+                         f"{'yes' if row['testable'] else 'no'} | "
+                         f"{c['hattic']} | {c['ref']} | {pos} | {cons} | "
+                         f"{'yes' if c['match'] else 'no'} |")
+        L.append("")
+        L.append(f"Hattic–Proto-Uralic (Control B, the same as in the PS "
+                 f"arm): {m['hattic_uralic']['testable']} items testable, "
+                 f"{m['hattic_uralic']['nontrivial']} non-trivial matches. "
+                 f"Morphology strand: "
+                 f"{'testable' if m['testable'] else 'not testable'} "
+                 f"(needs ≥ {MORPH_MIN_TESTABLE} testable items); "
+                 f"{'passes' if m['pass'] else 'does not pass'}.")
+        sens = arm["sensitivity"]
+        L.append("")
+        L.append("## Symbols the class tables do not list")
+        L.append("")
+        L.append("Read as: " + "; ".join(
+            f"{side} {s} → {c}" for side, d in INFERRED.items()
+            if side in ("hattic", "paa", "pu")
+            for s, c in d.items()) + ".")
+        L.append("")
+        L.append(f"Each was re-run under every class and under \"matches "
+                 f"nothing\"; geminates were also read as single, and PAA "
+                 f"affixes kept ({sens['runs']} re-runs, on the exploratory "
+                 f"set). " + (
+                     "R, R_PU and the outcome category are unchanged in "
+                     "every re-run." if not any(
+                         k in c for c in sens["changed"]
+                         for k in ("R", "R_PU", "outcome"))
+                     else "**R, R_PU or the outcome changes in at least one "
+                          "re-run; see below.**"))
+        if sens["changed"]:
+            L.append("")
+            L.append("Re-runs in which a candidate decision differs:")
+            L.append("")
+            for c in sens["changed"]:
+                extra = {k: v for k, v in c.items() if k != "variant"}
+                L.append(f"- {c['variant']}: {extra}")
     L.append("")
     return "\n".join(L)
 
@@ -715,10 +1088,27 @@ def main(argv):
         encoding="utf-8")
     (root / "analysis" / "results.md").write_text(render(results, meanings),
                                                   encoding="utf-8")
+    paa = {"ps_outcome": runs["main"]["outcome"]}
+    for src, fname, morph_kind, _ in PAA_SOURCES:
+        paa[src] = paa_arm(hattic, read_tsv(data / fname), pu, morph_kind)
+    reading, why = combined_reading(paa["primary"]["runs"]["main"]["outcome"],
+                                    runs["main"]["outcome"])
+    paa["combined"] = {"reading": reading, "reason": why}
+    (root / "analysis" / "results_paa.json").write_text(
+        json.dumps(paa, ensure_ascii=False, indent=1, default=str) + "\n",
+        encoding="utf-8")
+    (root / "analysis" / "results_paa.md").write_text(
+        render_paa(paa, meanings), encoding="utf-8")
     m = runs["main"]
     print(f"n={m['hattic_semitic']['n']} R={m['hattic_semitic']['R']} "
           f"p={m['control_A']['p']} n_PU={m['hattic_uralic']['n']} "
           f"R_PU={m['hattic_uralic']['R']} outcome: {m['outcome']}")
+    for src, *_ in PAA_SOURCES:
+        a = paa[src]["runs"]["main"]
+        print(f"PAA {src}: n={a['hattic_afroasiatic']['n']} "
+              f"R={a['hattic_afroasiatic']['R']} p={a['control_A']['p']} "
+              f"outcome: {a['outcome']}")
+    print(f"combined (A4.5): {reading}")
     return 0
 
 

@@ -175,9 +175,122 @@ class MorphologyTest(unittest.TestCase):
     def test_testable_counts(self):
         self.assertEqual(c.morph_compare("ps")["testable"], 1)
         self.assertEqual(c.morph_compare("pu")["testable"], 2)
+        self.assertEqual(c.morph_compare("paa")["testable"], 3)
+        self.assertEqual(c.morph_compare("paa_hsed")["testable"], 0)
+
+    def test_guttural_may_be_unaligned_in_morphology(self):
+        row = c.morph_compare("paa")["items"][3]   # item 4, ai-/(n)i- ~ *ʔan-
+        comp = row["comparisons"][0]
+        self.assertTrue(comp["consonants_agree"])
+        self.assertEqual(comp["guttural_unaligned"], "ʔ")
+        self.assertFalse(comp["match"])           # position not stated
+
+
+def paa_item(slot, stem, root):
+    return {"slot": slot, "h_stem": stem, "ref_root": root,
+            "h": c.hattic_consonants(stem), "ref": c.paa_consonants(root)}
+
+
+class PaaConsonantsTest(unittest.TestCase):
+    def test_first_alternative_form(self):
+        self.assertEqual(phs(c.paa_consonants("*ʔaḫ- ~ *ḫaʔ-")), ["ʔ", "ḫ"])
+        self.assertEqual(phs(c.paa_consonants("*baʔ-/*baw-/*bay")),
+                         ["b", "ʔ"])
+
+    def test_first_alternative_for_one_position(self):
+        self.assertEqual(phs(c.paa_consonants("*naw/yl/r-")),
+                         ["n", "w", "l"])
+        self.assertEqual(phs(c.paa_consonants("*KVʒ/ǯVm/n/l-")),
+                         ["K", "ʒ", "m"])
+        self.assertEqual(phs(c.paa_consonants("*ʔi/uǯn- ~ ʔi/udn-")),
+                         ["ʔ", "ǯ", "n"])
+
+    def test_optional_segments_left_out(self):
+        self.assertEqual(phs(c.paa_consonants("*sa(w/yV)ḥ-")), ["s", "ḥ"])
+        self.assertEqual(phs(c.paa_consonants("*ti(m)b(-ar)-")), ["t", "b"])
+        self.assertEqual(phs(c.paa_consonants("*ḳ(ʷ)as-")), ["ḳ", "s"])
+
+    def test_affixes_left_out(self):
+        self.assertEqual(phs(c.paa_consonants("*ʔa-pay-")), ["p", "y"])
+        self.assertEqual(phs(c.paa_consonants("*ʔad-Vm-")), ["ʔ", "d"])
+        self.assertEqual(phs(c.paa_consonants("*(ʔa-)ḫʷar-")), ["ḫʷ", "r"])
+        self.assertEqual(phs(c.paa_consonants("*ʔad-Vm-", keep_affixes=True)),
+                         ["ʔ", "d", "m"])
+
+    def test_classes_by_articulation(self):
+        cls = {s.ph: s.cls for s in c.paa_consonants("*ĉ̣aḳʷ-")}
+        self.assertEqual(cls, {"ĉ̣": "S", "ḳʷ": "K"})
+        self.assertEqual([s.cls for s in c.paa_consonants("*q̇ac̣-")],
+                         ["K", "S"])
+        self.assertEqual([s.cls for s in c.paa_consonants("*ᶜiĉ-")],
+                         ["H", "S"])
+        self.assertEqual(c.paa_class("ġ", c.PAA_CLASS), "H")  # not K
+        self.assertEqual(c.paa_class("ɬ", c.PAA_CLASS), "S")  # lateral
+        self.assertTrue(c.paa_consonants("*ʕVp-")[0].skippable)
+
+    def test_geminates(self):
+        self.assertEqual(phs(c.paa_consonants("*rabb-")), ["r", "b", "b"])
+        self.assertEqual(phs(c.paa_consonants("*rabb-",
+                                              collapse_geminates=True)),
+                         ["r", "b"])
+
+    def test_every_compared_paa_symbol_is_classed(self):
+        for name in ("proto_afroasiatic.tsv", "proto_afroasiatic_hsed.tsv"):
+            for r in c.read_tsv(REPO / "data" / name).values():
+                if r["form"]:
+                    for s in c.paa_consonants(r["form"]):
+                        self.assertIsNotNone(s.cls, (name, r["slot"], s.ph))
+
+
+class PaaPositiveControlTest(unittest.TestCase):
+    def test_regular_paa_reflexes_are_found(self):
+        # Hattic reflecting PAA regularly (*ḳ > k, *n > n, *c̣ > z, *b > p,
+        # *r > l), written in PAA notation with vowels, V, a prefix and an
+        # optional segment: the arm must find R >= 5 and shuffle p <= 0.01.
+        roots = ["knc", "kbr", "krn", "nck", "nbr", "nrc", "ckb", "cnr",
+                 "cbk", "bkn", "bcr", "brk", "rkc", "rnb", "rcn"]
+        paa = {"k": "ḳ", "n": "n", "c": "c̣", "b": "b", "r": "r"}
+        hat = {"k": "k", "n": "n", "c": "z", "b": "p", "r": "l"}
+        items = [paa_item(i, "a".join(hat[x] for x in r) + "a",
+                          "*ʔa-" + "V".join(paa[x] for x in r) + "(w)-")
+                 for i, r in enumerate(roots, 1)]
+        res = c.run(items)
+        self.assertEqual(res["candidates"], len(roots))
+        self.assertGreaterEqual(res["R"], 5)
+        self.assertLessEqual(c.shuffle_control(items, res["R"])["p"], 0.01)
+
+
+class CombinedReadingTest(unittest.TestCase):
+    def test_a4_5_table(self):
+        cd, ns, sp = "the data cannot decide", "no support", "support"
+        self.assertEqual(c.combined_reading(sp, ns)[0], sp)
+        self.assertEqual(c.combined_reading(ns, sp)[0], ns)
+        self.assertTrue(c.combined_reading(ns, sp)[1].startswith(
+            "PS-only support, PAA arm fails"))
+        self.assertEqual(c.combined_reading(cd, ns)[0], ns)
+        self.assertEqual(c.combined_reading(cd, cd)[0], cd)
+        self.assertEqual(c.combined_reading(cd, sp)[0], cd)
+        self.assertTrue(c.combined_reading(cd, sp)[1].startswith(
+            "PS-only support, PAA arm cannot decide"))
 
 
 class RepoTest(unittest.TestCase):
+    def test_paa_arm_on_repository_data(self):
+        hattic = c.read_tsv(REPO / "data" / "hattic.tsv")
+        pu = c.read_tsv(REPO / "data" / "control_proto_uralic.tsv")
+        counts = c.hattic_selected(hattic, "counts")
+        for name, n, n2 in (("proto_afroasiatic.tsv", 17, 14),
+                            ("proto_afroasiatic_hsed.tsv", 16, 14)):
+            paa = c.read_tsv(REPO / "data" / name)
+            res = c.evaluate(counts, paa, pu, shuffle=False, ref_kind="paa",
+                             morph_kind="paa")
+            self.assertEqual(res["hattic_afroasiatic"]["n"], n)
+            self.assertEqual(res["hattic_uralic"]["n"], 13)
+            self.assertEqual(res["outcome"], "the data cannot decide")
+            res2 = c.evaluate(counts, paa, pu, shuffle=False, ref_kind="paa",
+                              min_non_semitic=2)
+            self.assertEqual(res2["hattic_afroasiatic"]["n"], n2)
+
     def test_main_run_on_repository_data(self):
         hattic = c.read_tsv(REPO / "data" / "hattic.tsv")
         ps = c.read_tsv(REPO / "data" / "proto_semitic.tsv")
