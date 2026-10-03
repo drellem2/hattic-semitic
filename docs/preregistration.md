@@ -536,3 +536,220 @@ to the strict figure, never in place of it.
 - **Proto-Uralic (§4.2).** Unchanged in substance: Sammallahti 1988 (in a
   scan of Sinor 1988) and the UEW (Uralonet, or a scan of the printed volume)
   are both openly viewable. Each form records which was used.
+
+### A4 — 2026-10-03: a second arm, Hattic vs Proto-Afroasiatic
+
+**State when made:** the Hattic, Proto-Semitic and Proto-Uralic slot lists
+had been committed under A3 (17 Hattic slots qualify under §1.2), so their
+forms could be seen. No comparison had been run or seen by the author of this
+amendment. **No Proto-Afroasiatic form had been looked up, and no
+Proto-Afroasiatic source had been opened** — not even to check whether it can
+be viewed. This amendment is committed on its own, before any
+Proto-Afroasiatic data.
+
+**Reason.** If Hattic is a *sister* of Semitic, the node the two share is
+Proto-Afroasiatic (PAA), not Proto-Semitic (PS). The hypothesis therefore
+predicts resemblances to PAA reconstructions as well, and a comparison with PS
+alone cannot tell a sister from a language that borrowed from Semitic (§6.1).
+A4 adds a PAA arm. **The PS arm is not changed:** it runs exactly as §1–§8
+and A1–A3 define it, and its §6 outcome is reported first, unchanged, as the
+registered result of the Hattic–Proto-Semitic comparison. A4 adds a second
+outcome (the PAA arm) and a combined reading of the two (A4.5).
+
+Everything not changed below applies to the PAA arm as written for the PS
+arm, with "Proto-Afroasiatic" in place of "Proto-Semitic": the comparison
+list and its 96 lexical slots (§1), the Hattic slot list exactly as committed,
+with its segmentation and §1.2 / A3 qualification (no Hattic form is
+re-chosen or re-segmented for this arm), the semantic latitude (§2), the
+matching procedure (§3.1, §3.3–§3.6), the provenance standard (A2), and the
+loan and onomatopoeia screen (§3.4, applied against the PAA form).
+
+#### A4.1 Which reconstruction, and how disagreement is handled
+
+PAA reconstruction is far less secure than PS. The available reconstructions
+disagree with each other on the consonant inventory, on the sound
+correspondences between branches, and on many individual roots; each has been
+sharply criticised; and each covers far fewer basic meanings than the PS
+references do, so many of the 96 slots will have no PAA form at all.
+
+In order of precedence:
+
+1. **Militarev & Stolbova, Afroasiatic etymological database**, Tower of Babel
+   project (StarLing; online). Chosen first because it is the most recent and
+   is still being revised (it supersedes much of item 2, which shares an
+   author), because each entry lists its reflexes branch by branch, so the
+   attestation rule below can be checked, and because its Semitic side comes
+   from the same school as the SED (§7.1), so the two arms use compatible
+   Semitic material. Because the database changes, every form records the
+   date it was viewed and a verbatim quote of the entry; a later revision of
+   an entry does not change a slot already committed.
+2. **Orel & Stolbova 1995**: V. E. Orel & O. V. Stolbova, *Hamito-Semitic
+   Etymological Dictionary: Materials for a Reconstruction*, Leiden: Brill
+   (HdO I/18). Broad coverage, but fixed in 1995 and widely criticised for
+   loose semantic and phonological matching.
+3. **Ehret 1995**: C. Ehret, *Reconstructing Proto-Afroasiatic
+   (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary*, Berkeley:
+   University of California Press (UCPL 126). An independent school with a
+   different consonant system; covers fewer basic meanings.
+
+**One reconstruction per arm, never mixed per slot.** Unlike §7.1, a lower
+source is *not* consulted slot by slot. The highest-precedence source that
+can be viewed is the **primary** source, and every PAA slot is filled from it
+alone; a slot it does not fill is empty. Reasons: the three sources write
+different consonant systems, so correspondences counted phoneme by phoneme
+(§3.5) would be meaningless across a mixed list; and choosing per slot among
+contested reconstructions is exactly the freedom this registration exists to
+remove. If the first source cannot be viewed, the next becomes primary for
+the whole arm. That is decided on viewability alone, before any form is
+extracted from any of them, and recorded in a dated amendment.
+
+**Sensitivity, never decisive.** If the next source after the primary can be
+viewed, the whole arm is also run on it alone and reported in full, whatever
+it shows. It never changes the PAA arm's outcome; if the two disagree, the
+summary says so.
+
+**What fills a slot.** A PAA form fills a slot only if:
+
+- the source assigns it to **Proto-Afroasiatic itself** (in item 1's terms,
+  "Afrasian"), not to a lower node such as a proposed sub-grouping of
+  branches or a single branch's proto-language — as §4.2 and A3 already
+  require for Proto-Uralic and Proto-Semitic;
+- the source's own reflex list for it includes **at least two of the six
+  branches** (Semitic, Egyptian, Berber, Chadic, Cushitic, Omotic), at least
+  one of them not Semitic; and
+- the gloss the source gives **to the reconstruction itself** — not to a
+  daughter reflex — is the slot meaning, within the latitude of §2. If the
+  reconstruction is glossed with several meanings, the slot meaning (or a §2
+  equivalent) must be one of them; the same reconstruction may then fill more
+  than one slot, and such pairs are not independent (§3.5).
+
+If the source gives more than one qualifying reconstruction for a slot, the
+tie-breakers are, in order: the one glossed with the slot meaning alone; the
+one with reflexes in the most branches; the first in the source's own order.
+How each form was found (meaning search, index, reading) is recorded.
+
+**Dependence on Semitic.** A PAA root attested only in Semitic and one other
+branch rests largely on the Semitic evidence, so it adds little that the PS
+arm does not. Each PAA form records the number of non-Semitic branches it
+cites. The arm is decided on all qualifying forms; the result restricted to
+forms with **at least two non-Semitic branches** is reported alongside it, in
+the way the `exact`-only result is (§2, §4.3).
+
+**PAA morphology (§5).** One viewed source is used for all eight items, not
+chosen item by item: R. J. Hayward 2000, "Afroasiatic", in B. Heine &
+D. Nurse (eds.), *African Languages: An Introduction*, Cambridge University
+Press, if it can be viewed; otherwise the primary lexical source. Only forms
+the source gives as Proto-Afroasiatic count. Items it does not give are empty.
+
+#### A4.2 Threshold and outcome categories
+
+The PAA arm has its own n: the number of the 96 lexical slots filled both by
+a qualifying Hattic form (§1.2, A3) and by a qualifying PAA form (A4.1).
+
+**The threshold is the same as §6: n ≥ 30.** The reasons given in §6 are
+properties of the procedure, not of the reference language: three
+independent recurrences of one correspondence, and a shuffle distribution
+fine enough to read, need about thirty compared slots whatever is on the
+other side. Nothing about PAA makes fewer slots enough. If anything, it
+argues for more: PAA forms are less certain, often carry several glosses, and
+are written in a larger consonant inventory, which spreads correspondences
+over more phoneme pairs. A lower threshold would make the arm weaker exactly
+where its references are weaker, so the threshold is not lowered to fit PAA's
+small coverage.
+
+The outcome categories are those of §6, unchanged: **cannot decide**,
+**no support**, **support**, with the lexical criterion of §4.3 and the
+morphology strand of §5.3, computed between Hattic and PAA.
+
+#### A4.3 Controls
+
+The same two controls, with the same margins as §4.3:
+
+- **Control A** — meaning-shuffled Hattic vs PAA: the n Hattic forms of the
+  PAA arm's n compared slots are deranged among those slots, 1000 times, with
+  seed **20261003**, and p = (1 + number of shuffles with
+  R_shuffle ≥ R_observed) / 1001.
+- **Control B** — Hattic vs Proto-Uralic, exactly as §4.2. Its data and
+  result are the same as in the PS arm (same Hattic forms, same Proto-Uralic
+  forms), so it is computed once and used by both arms.
+
+The PAA lexical strand **passes** if R ≥ 5, p ≤ 0.05, and r ≥ 2 × r_PU and
+r − r_PU ≥ 0.05, where R and r = R / n are now Hattic–PAA figures; if
+n_PU < 20, condition 3 is replaced by p ≤ 0.01, as in §4.3. The morphology
+strand's Control B (§5.3) is likewise unchanged.
+
+#### A4.4 Consonant classes for PAA
+
+PAA consonants are assigned to the classes of §3.2 by **articulation, not by
+symbol**, so that the rule applies to whichever source is primary (their
+notations differ). Glottalised or emphatic consonants go into the class of
+their plain counterpart, as PS *ṭ, *ṣ, *q already do; labialised consonants
+go into the class of their unlabialised counterpart; a prenasalised stop goes
+into the class of its oral part.
+
+| class | Proto-Afroasiatic (any notation) | Hattic |
+|---|---|---|
+| P labial obstruent | labial stops and fricatives: *p, *b, *f, glottalised *p̣ / *p' | as §3.2 |
+| M | *m | as §3.2 |
+| T dental stop | dental and alveolar stops: *t, *d, glottalised *ṭ / *t' | as §3.2 |
+| S sibilant/affricate/interdental | sibilant fricatives (*s, *z, *š, and glottalised *ṣ / *s'); dental, alveolar and palatal affricates (*c, *ʒ / *dz, *č, *ǯ, *ĉ, and glottalised *c̣ / *c', *č̣ / *ĉ'); interdentals; **lateral fricatives and affricates** (*ś, *ɬ, *ŝ, *tl, *dl, *ł, and glottalised *ṣ́ / *tl' / *ɬ') | as §3.2 |
+| K velar/uvular | velar and uvular stops: *k, *g, *q, glottalised *ḳ / *k', labiovelars *kʷ, *gʷ, *ḳʷ | as §3.2 |
+| N | nasals other than *m: *n, *ñ / *ny, *ŋ, *ŋʷ | as §3.2 |
+| R liquid | *r, *l (the lateral approximant only) | as §3.2 |
+| W glide | *w, *y / *j | as §3.2 |
+| H guttural | *ʔ, *ʕ, *h, *ḥ / *ħ, *x / *ḫ, *xʷ, *ɣ / *ġ | as §3.2 |
+
+**Laterals** go into S because PS *ś and *ṣ́, which descend from them, are in
+S under §3.2; putting them anywhere else would let the two arms disagree on a
+pair the PS arm has already classed. Only the lateral approximant *l is R.
+
+The T ~ S cross-class match and the guttural rule of §3.2 (at most one
+unscored guttural-to-nothing alignment per pair) apply unchanged.
+
+**Notation.** A segment the source writes in parentheses or marks as
+optional is left out. Where the source gives alternatives for one position
+(e.g. *b/*p), the first-listed is used. Consonants the source marks as an
+affix or root extension are left out, as the PS arm compares root consonants
+only. Vowels and tone are not compared. A consonant that cannot be placed in
+a class from this table or from the primary source's own phonetic description
+is scored as a **mismatch** at its position. Correspondences (§3.5) are
+counted phoneme by phoneme in the primary source's own notation.
+
+#### A4.5 How the two arms combine
+
+The two arms are not independent: they use the same Hattic forms, and PS
+descends from PAA, so many PS and PAA forms in a slot will be cognate.
+Agreement between the arms is therefore not two confirmations, and two arms
+must not become two chances to pass. **Only the PAA arm can give support** to
+the sister reading. The combined reading is:
+
+| PAA arm | PS arm | combined reading of the sister hypothesis |
+|---|---|---|
+| support | any | **Support**, stating the PS arm's outcome |
+| no support | any | **No support**; if the PS arm supports, the summary leads with "PS-only support, PAA arm fails" |
+| cannot decide | no support | **No support** (the PS arm's own result stands) |
+| cannot decide | cannot decide or support | **The data cannot decide**; if the PS arm supports, the summary leads with "PS-only support, PAA arm cannot decide" |
+
+PS-only support is not support for a *sister*: a sister should resemble the
+node it shares with Semitic, and resemblance to PS alone is also what
+borrowing from Semitic, or chance in one arm, would produce. A PAA-only
+support, with the PS arm not passing, is reported as support at the
+Afroasiatic level with the PS arm's outcome stated; §6.1 still applies — it
+establishes relatedness, not that Hattic is specifically a sister of Semitic.
+§6.2 applies to each arm separately.
+
+#### A4.6 Expectation, stated now
+
+Only **17** Hattic slots qualify (mg-78856), and the PAA arm's n cannot exceed
+the Hattic count; even the 24 Hattic forms including doubtful ones are fewer
+than 30. **The PAA arm will therefore land in "cannot decide"**, whatever the
+PAA forms turn out to be, and so will the combined reading unless the PS arm
+reaches "no support" — which it cannot either, with n = 9 (data/README.md).
+
+The reason to fix the design now is that it is then fixed before any PAA
+data, ready for when more Hattic material can be viewed (in particular
+Soysal 2004). Even then, the PAA arm's n is limited by how many of the 96
+meanings the primary PAA source reconstructs at all, which is likely to be
+fewer than the PS sources cover. The PAA arm may therefore never reach
+n ≥ 30. That cost is accepted: it is the result of not lowering the
+threshold, and it will be reported as such rather than worked around.
