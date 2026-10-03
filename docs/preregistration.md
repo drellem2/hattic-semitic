@@ -847,3 +847,111 @@ latitude.
    that function. Morphology has no branch rule (A4.1 says only "forms the
    source gives as Proto-Afroasiatic"), so branches the record names only
    in its notes are reported but not tested.
+
+### A6 — 2026-10-03: how A4.1 is applied to Orel & Stolbova 1995 for the sensitivity run
+
+**State when made:** A4, A5 and the primary PAA slot list
+(`data/proto_afroasiatic.tsv`) committed. No comparison had been run on any
+PAA list. From Orel & Stolbova 1995 (HSED), Internet Archive
+`vladimir-e.-orel-olga-v.-stolbova-hamito-semitic-etymological-dictionary-materia`,
+the following had been read: the introduction (pp. IX–XXVIII), the list of
+abbreviations, the layout of the entries on the first leaf of the dictionary
+(entries 1–11, pp. 2–3), and the "Index of Meanings" (pp. 557 ff.), from
+which the entry numbers listed under a dozen slot words had been printed. The
+open OCR text had been split into its 2672 numbered entries. **No slot had
+been filled**, no candidate entry for any slot had been checked against the
+page image, and nothing had been entered in `data/` from this source.
+
+**Why an amendment.** A4.1 requires the PAA arm also to be run on the next
+source after the primary, alone, as a sensitivity check that is never
+decisive (A5: that source can be viewed). A5's reading of the slot rules was
+written for the database's record format. HSED is a printed book with a
+different format. Below, A5's rules are restated for HSED. Each change is
+one that HSED's format forces, and the reason is given. **A5's reading is
+otherwise kept unchanged**, so that the two lists differ in source, not in
+rules. Nothing here changes the primary arm or its outcome.
+
+1. **Gloss.** HSED prints each entry as a bold heading,
+   `N *reconstruction “gloss”`, followed by one reflex line per family or
+   branch. The gloss of the reconstruction is the gloss printed **in the
+   heading**. Reflex-line glosses are never used (A4.1), and neither is the
+   Index of Meanings: it also lists the meanings of reflexes. The heading
+   gloss is split into components at "," and ";". HSED states (p. XXV) that
+   a ";" separates a noun meaning from a verb meaning under one heading.
+   Matching is A5 rule 1 unchanged: a leading "to", a trailing "?" and a
+   trailing "(?)" are ignored and recorded, and anything else in a component
+   makes it a different meaning.
+   - **"be X" is not "X".** HSED translates adjectives as predicates ("not
+     *red* but *be red*", p. XXVII). The database often does the same, and
+     A5 did not treat "be dark", "be bitter" or "be new" as a match (see the
+     notes of `data/proto_afroasiatic.tsv`). That reading is kept, so a
+     heading "be big" does not fill slot 32 *big*. Such headings are listed
+     as near misses. The number of slots that would fill if a leading "be"
+     were ignored is reported in `data/README.md` for information only. It
+     fills no slot.
+2. **"Glossed with the slot meaning alone"** (first tie-breaker): as A5
+   rule 2. The heading's part-of-speech tag (rule 3) is not a component.
+3. **Part of speech.** HSED sometimes tags a heading gloss "(n.)" or "(v.)".
+   For a homograph (*fly*, *hide*), that tag decides first. Without a tag,
+   A5 rule 3 applies: the other components of the heading gloss, and for a
+   gloss of that word alone, the entry's own reflex glosses. The tag is not
+   part of the gloss for matching.
+4. **Branches.** HSED gives no Common Cushitic or Common Chadic level. It
+   labels each reflex line by family or subfamily (pp. X–XIII). The labels
+   count towards A4.1's six branches as follows. Semitic: Sem. Egyptian: Eg.
+   Berber: Berb. Chadic: WCh, CCh, ECh. Cushitic: Bed (Beja), Agaw, SA
+   (Saho-Afar), LEC, Wrz (Werizoid), HEC, Dhl (Dahalo), Mgg (Mogogodo),
+   Rift ("South Cushitic"). Omotic: Omot. HSED lists Omotic among its
+   Cushitic subfamilies, but A4.1 counts it as a branch of its own, as A5
+   rule 4 does. A branch counts if the entry has a reflex line with its
+   label. Forms named only in the commentary under a reflex line, or after
+   "Cf." at the end of the entry, do not count, as A5 does not count the
+   database's "Notes". A reflex line that HSED marks with "?", or calls a
+   possible loan, still counts, and the mark is quoted in `notes`, as in A5.
+5. **Level.** HSED labels every heading reconstruction Hamito-Semitic
+   ("HS"). It uses that term as "an absolute synonym of … Afro-Asiatic"
+   (p. IX, n. 1). So every heading meets A4.1's level rule, and the `level`
+   column reads `Hamito-Semitic`, the source's own label. Some headings are
+   reconstructed from one family only (p. XV). They fail the branch rule
+   anyway.
+6. **Source order** (last tie-breaker): HSED's entry numbers. They run from
+   1 to 2672 in its alphabetical order.
+7. **Citation and quote.** A form is cited by entry number, printed page and
+   scan leaf: `cited:Orel & Stolbova 1995 (HSED), no. N, p. P;
+   https://archive.org/details/<identifier>/page/n<leaf>`. Each leaf is a
+   two-page spread, so pages 2k and 2k+1 are on leaf 19 + k. The `quote`
+   column is the heading verbatim, `N *reconstruction “gloss”`. It is
+   **transcribed from the page image**, because the OCR garbles the
+   reconstructions (for example `Yab-` for the printed `*ˀab-`). So, unlike
+   A5's quotes, it cannot be checked by machine against the page text. What
+   can be checked by machine is that the cited leaf's OCR contains the entry
+   number and that the leaf matches the page. HSED prints the glottal stop
+   and the ʿayin as raised hooks, which are transcribed as ˀ (U+02C0) and
+   ˁ (U+02C1). All other letters and diacritics are transcribed as printed.
+   The `branches` column is also read from the page image. The `viewed`
+   column holds the date of reading, as A4.1 requires, although the book,
+   unlike the database, does not change.
+8. **Form.** `root` is the heading reconstruction as printed. `form` is the
+   same with a trailing doubt mark removed, which is then recorded in
+   `notes`, as in A5. Parentheses, brackets and "/" alternants are kept in
+   both. A4.4 deals with them at comparison time.
+9. **Search.** For each slot, the candidates are the entries the Index of
+   Meanings lists under the slot word or a §2 equivalent, together with every
+   entry whose OCR heading contains the slot word or a §2 equivalent. Every
+   candidate whose heading gloss could match is read on the page image.
+   Headings whose number the OCR misread are found by their position between
+   neighbouring entries, and are read on the image as well. How the chosen
+   form was found is recorded.
+10. **Scope.** HSED excludes "numerals, pronouns, prepositions and
+    particles" (p. XXVII). So it is expected to leave slots such as *one*,
+    *who?*, *what?*, *this* and *in* empty. They are searched like any other
+    slot, and an empty slot is recorded as a result.
+11. **Morphology.** For the sensitivity run, the §5.1 items are taken from
+    HSED alone, as A4.1 takes them from the primary lexical source. Given
+    its scope (rule 10), the items are searched in the Index of Meanings and
+    are expected to be empty. Whatever is found is recorded in
+    `data/morphology.md`.
+
+**File.** The list is `data/proto_afroasiatic_hsed.tsv`. It has the same
+columns as `data/proto_afroasiatic.tsv` and is validated by the same checks,
+except as rules 5 and 7 state.
