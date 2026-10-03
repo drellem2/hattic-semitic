@@ -30,7 +30,10 @@ from `data/`.
     securely glossed and in a lexical slot (§1.2);
   - that a Proto-Afroasiatic form is at the Proto-Afro-Asiatic level, has
     reflexes in at least two branches, one of them not Semitic (A4.1), and
-    records the date viewed and a quote of its reconstruction and gloss.
+    records the date viewed and a quote of its reconstruction and gloss;
+  - for the HSED sensitivity list, the same with HSED's level label,
+    Hamito-Semitic, plus that the quote is the entry heading and the cited
+    page lies on the cited scan leaf (A6).
 
   Run `python3 analysis/validate_data.py`. It exits non-zero on any error.
 - [`paa_starling.py`](paa_starling.py) builds `data/proto_afroasiatic.tsv`
@@ -45,7 +48,17 @@ from `data/`.
   decisions of A5 rule 3 are listed in the script (`POS_EXCLUDED`). The
   database can change, so a rebuild on a later date may differ. The
   committed file is the one viewed on 2026-10-03.
-- [`test_validate_data.py`](test_validate_data.py) and
-  [`test_paa_starling.py`](test_paa_starling.py) hold the tests. They make no
-  network requests. Run them with
-  `python3 -m unittest analysis/test_validate_data.py analysis/test_paa_starling.py`.
+- [`paa_hsed.py`](paa_hsed.py) builds `data/proto_afroasiatic_hsed.tsv`, the
+  A4.1 sensitivity list, from Orel & Stolbova 1995 (preregistration A6, A7).
+  Run `python3 analysis/paa_hsed.py`. It applies the slot rules to readings
+  recorded in [`paa_hsed_data.py`](paa_hsed_data.py): the heading gloss of
+  every entry the slot search found, the labels of the reflex lines, and, for
+  each chosen entry, the reconstruction transcribed from the page image. The
+  scan's OCR misreads the reconstructions, so it was used only to find
+  entries. The builder refuses to choose an entry it has no image reading
+  for, or to compare entries whose labels were not read on the image.
+- [`test_validate_data.py`](test_validate_data.py),
+  [`test_paa_starling.py`](test_paa_starling.py) and
+  [`test_paa_hsed.py`](test_paa_hsed.py) hold the tests. They make no network
+  requests. Run them with
+  `python3 -m unittest analysis/test_validate_data.py analysis/test_paa_starling.py analysis/test_paa_hsed.py`.

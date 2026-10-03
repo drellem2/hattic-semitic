@@ -89,6 +89,10 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
    be viewed, which makes it the primary PAA source. A5 also fixes how A4's
    slot rules are read for that database. It was committed before any PAA
    slot was filled.
+   Amendment A6, committed before any slot was filled from it, restates
+   those rules for Orel & Stolbova 1995, the next PAA source. A4 requires the
+   PAA arm also to be run on that source alone, as a sensitivity check that
+   is never decisive. A7 records two clerical points found while filling it.
 2. **Data assembled.** See [`data/`](data/) and its README for the full
    counts and the source list.
 
@@ -97,6 +101,7 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 | Hattic | 24, of which **17 securely glossed** and counting toward the decision | 24 | 0 (0%) |
 | Proto-Semitic | 37 | 37 | 0 (0%) |
 | Proto-Afroasiatic (second arm) | 80 | 80 | 0 (0%) |
+| Proto-Afroasiatic, sensitivity list (Orel & Stolbova 1995) | 75 | 75 | 0 (0%) |
 | Proto-Uralic (control) | 61 | 61 | 0 (0%) |
 
 **What could not be sourced.**

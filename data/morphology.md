@@ -92,6 +92,20 @@ None of these glosses carries a doubt marker. *ʔVl- and *ʔy- are glossed
 only "not", so they are entered under negation (item 5), not under the
 prohibitive (item 6). The source's notes are not used to re-gloss them.
 
+## Proto-Afroasiatic, sensitivity source (Orel & Stolbova 1995)
+
+A4.1 runs the PAA arm a second time on the next source, Orel & Stolbova
+1995 (HSED), alone. For that run the eight items are taken from HSED too
+(A6 rule 11). HSED states that it covers "all categories of lexical units
+with the exception of numerals, pronouns, prepositions and particles"
+(p. XXVII; Internet Archive
+`vladimir-e.-orel-olga-v.-stolbova-hamito-semitic-etymological-dictionary-materia`,
+leaf n13). Its Index of Meanings (pp. 557 ff.) was searched for pronoun,
+person, negation, prohibitive, plural and causative glosses, and has none.
+As a positive control, the same search finds lexical index entries such as
+"make" and "many". **All eight items are empty for HSED**, so none is
+testable for Hattic–PAA in the sensitivity run.
+
 ## Proto-Uralic (Control B)
 
 | # | item | form | position | gloss as given | provenance |
