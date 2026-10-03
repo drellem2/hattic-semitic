@@ -27,8 +27,25 @@ from `data/`.
     appears without a form;
   - the controlled values;
   - that a Hattic form counts toward the decision exactly when it is cited,
-    securely glossed and in a lexical slot (§1.2).
+    securely glossed and in a lexical slot (§1.2);
+  - that a Proto-Afroasiatic form is at the Proto-Afro-Asiatic level, has
+    reflexes in at least two branches, one of them not Semitic (A4.1), and
+    records the date viewed and a quote of its reconstruction and gloss.
 
   Run `python3 analysis/validate_data.py`. It exits non-zero on any error.
-- [`test_validate_data.py`](test_validate_data.py) holds the validator's tests.
-  Run them with `python3 -m unittest analysis/test_validate_data.py`.
+- [`paa_starling.py`](paa_starling.py) builds `data/proto_afroasiatic.tsv`
+  from the Militarev–Stolbova database (preregistration A4.1, A5).
+  `python3 analysis/paa_starling.py fetch CACHE` downloads the database's
+  2671-record list into `CACHE`, about 134 pages. The server sometimes
+  answers with an error page; those are retried and never cached.
+  `python3 analysis/paa_starling.py build CACHE --viewed YYYY-MM-DD` applies
+  the slot rules and re-opens each chosen record on its own page. It checks
+  the quote against that page and writes the file. A slot whose quote does
+  not check is left empty, and the script exits non-zero. The part-of-speech
+  decisions of A5 rule 3 are listed in the script (`POS_EXCLUDED`). The
+  database can change, so a rebuild on a later date may differ. The
+  committed file is the one viewed on 2026-10-03.
+- [`test_validate_data.py`](test_validate_data.py) and
+  [`test_paa_starling.py`](test_paa_starling.py) hold the tests. They make no
+  network requests. Run them with
+  `python3 -m unittest analysis/test_validate_data.py analysis/test_paa_starling.py`.

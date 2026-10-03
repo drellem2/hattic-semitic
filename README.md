@@ -84,7 +84,11 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
    Amendment A4, committed before any Proto-Afroasiatic form was collected,
    adds a second arm comparing Hattic with Proto-Afroasiatic, the node a
    sister of Semitic would share with it; only that arm can give support to
-   the sister reading.
+   the sister reading. Amendment A5 records that the first source in A4's
+   order, the Militarev–Stolbova Afroasiatic database (Tower of Babel), could
+   be viewed, which makes it the primary PAA source. A5 also fixes how A4's
+   slot rules are read for that database. It was committed before any PAA
+   slot was filled.
 2. **Data assembled.** See [`data/`](data/) and its README for the full
    counts and the source list.
 
@@ -92,6 +96,7 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 |---|---|---|---|
 | Hattic | 24, of which **17 securely glossed** and counting toward the decision | 24 | 0 (0%) |
 | Proto-Semitic | 37 | 37 | 0 (0%) |
+| Proto-Afroasiatic (second arm) | 80 | 80 | 0 (0%) |
 | Proto-Uralic (control) | 61 | 61 | 0 (0%) |
 
 **What could not be sourced.**
@@ -106,10 +111,11 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
   either.
 
 Only 9 lexical slots are filled with a qualifying Hattic form and a
-Proto-Semitic form, against the n ≥ 30 that §6 requires. Only 1 of the 8
-morphology items is testable. As assembled, the data point to the
-pre-registered outcome **"the data cannot decide"**. That is stated here
-before any comparison has been run.
+Proto-Semitic form, and 17 with a qualifying Hattic form and a
+Proto-Afroasiatic form, against the n ≥ 30 that §6 and A4.2 require. The
+PAA count is capped by the Hattic side: all 17 qualifying Hattic slots have
+a PAA form. Only 1 of the 8 morphology items is testable for
+Proto-Semitic, and 3 for Proto-Afroasiatic.
 
 3. **Comparison run.** The outcome is **the data cannot decide**: n = 9,
    and §6 needs n ≥ 30. The category follows from n alone. The full procedure
@@ -120,8 +126,9 @@ before any comparison has been run.
    - morphology: 1 of 8 items testable, 0 non-trivial matches.
 
    The collated-only result is the same, because no form is uncollated. This
-   is the Proto-Semitic arm. The A4 Proto-Afroasiatic arm has no data yet,
-   but its n cannot exceed the 17 qualifying Hattic slots, so the combined
+   is the Proto-Semitic arm. The A4 Proto-Afroasiatic arm's data are now
+   assembled (n = 17, see above) but not yet compared; its n cannot exceed
+   the 17 qualifying Hattic slots, so the combined
    A4.5 reading is also "the data cannot decide". See
    [`results/summary.md`](results/summary.md).
 
