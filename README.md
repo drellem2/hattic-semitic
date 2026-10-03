@@ -80,6 +80,10 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
    data. They check the word list, define `cited` as "viewed during
    collection", and record which sources could not be viewed and what
    replaced them.
+   Amendment A4, committed before any Proto-Afroasiatic form was collected,
+   adds a second arm comparing Hattic with Proto-Afroasiatic, the node a
+   sister of Semitic would share with it; only that arm can give support to
+   the sister reading.
 2. **Data assembled; no comparison run yet.** See [`data/`](data/) and its
    README for the full counts and the source list.
 
