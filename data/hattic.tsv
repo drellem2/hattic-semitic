@@ -1,0 +1,101 @@
+slot	meaning	strand	form	stem	segmentation	gloss_as_given	gloss_confidence	match	provenance	decision	notes
+1	fire	lexical									
+2	nose	lexical									
+3	to go	lexical	nu	nu	stem as stated: ú-da-nu = ú- (2nd person) + -da- (infix) + nu (Schuster 1974 p. 146)	„gehen“ (Verbalstamm)	secure	exact	cited:Schuster 1974, p. 146; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n163	counts	Schuster p. 146 'Wortstamm nu „gehen“', also p. 97; Kammenhuber 1969 p. 527 gives the same verb as nuu̯a [nuu̯] „kommen, gehen“ (= Hitt. pai-, u̯a-). Same Hattic stem is the Kammenhuber form for slot 11, so the two slots are not independent (§3.5).
+4	water	lexical									
+5	mouth	lexical									
+6	tongue	lexical	aleb	aleb	unsegmented	„Zunge“	secure	exact	cited:Schuster 1974, p. 96; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n113	counts	Schuster p. 96 'aleb „Zunge“' (main discussion in his part 2, not viewed); p. 102 u̯aₐ-ša-aḫ a-li-ib „die bösen Zungen“. Not in Kammenhuber 1969.
+7	blood	lexical									
+8	bone	lexical									
+9	you (2sg)	morphology									grammatical item: see data/morphology.md
+10	root	lexical									
+11	to come	lexical	a-ša-a		unsegmented	„komm herein, (Herr) von Nerik!“	doubtful	exact	cited:Schuster 1974, p. 31; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n48	exploratory	Schuster's only forms glossed 'come' are (a) a-ša-a „komm herein!“ (pp. 31-32), his translation of a monolingual Hattic recitation, i.e. a gloss from context only (§1.2: doubtful), and (b) ut-ta-a „komm herbei!“ (p. 147, tentative); his bilingual forms with Hittite uizzi 'comes' (ta-aš-te-e-ta-nu-u-u̯a p. 138) are built on the stem nu, which he glosses „gehen“ (slot 3). Under A3 precedence Schuster's form fills the slot. Kammenhuber 1969 p. 527 glosses nuu̯a „kommen, gehen“ without doubt: if that form were taken instead, this slot would be secure (sensitivity, see README).
+12	breast	lexical									
+13	rain	lexical	tumil	tumil	unsegmented (listed as stem)	„Regen”	secure	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 444; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n459	counts	Kammenhuber p. 444 n. 1, 466, 518 („Korrekt sind: tumil „Regen““); variant tumin a scribal error. Schuster gives only u̯aₐ/u̯iᵢ-bi-zi-il = Hitt. 'rain and wind', glossed „Regenböe“ (p. 99), which is not the slot meaning, so Schuster gives no form for this slot.
+14	I (1sg)	morphology									grammatical item: see data/morphology.md
+15	name	lexical									
+16	louse	lexical									
+17	wing	lexical									
+18	flesh/meat	lexical									
+19	arm/hand	lexical									
+20	fly (insect)	lexical									
+21	night	lexical									
+22	ear	lexical									
+23	neck	lexical									
+24	far	lexical									
+25	to do/make	lexical	bu	bu	stem as stated; e.g. *ni-i-bu-e = (n)i- (1st person) + bu + -e (present) „wir machen“ = Hitt. iyaweni (p. 93)	„machen“ (Verbalstamm)	secure	exact	cited:Schuster 1974, p. 89; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n106	counts	Schuster p. 89 'bu „machen“', bilingual p. 93; a-am-bu = Hitt. iet (p. 110). Disagreement: Kammenhuber 1969 p. 528 gives pu(?) „machen“ as doubtful.
+26	house	lexical	vae-	vae	ḫa-ai-u̯aₐ-ib = ḫa- + -ai- (1st person possessive) + vae + -b (Schuster p. 97); li-e-u̯aₐ-e-el „sein Haus“ (p. 92, 137)	„Haus“ (Wortstamm)	secure	exact	cited:Schuster 1974, p. 97; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n114	counts	Schuster p. 97 'Wortstamm vae- „Haus“'. Kammenhuber 1969 p. 467 gives p/u̯eₑl [fel] „Haus“ (= Hitt. É/parn-).
+27	stone/rock	lexical	tiuz (dupl. ziuz)	tiuz	unsegmented	„Felsen“ (= NA4peruna-)	secure	exact	cited:Schuster 1974, p. 93; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n110	counts	Schuster p. 93: tiuz (duplicate ziuz) = Hitt. NA4peruna- „Felsen“ (rock; slot is stone/rock); full discussion in his part 2 (not viewed). His restored zi-i-u̯[š?] „Felsen/Stein“ (pp. 93-94) is marked doubtful by him. Kammenhuber 1969 p. 454/504 gives pip = Hitt. NA4 „Stein“.
+28	bitter	lexical									
+29	to say	lexical									
+30	tooth	lexical									
+31	hair	lexical									
+32	big	lexical	tittaḫ	tittaḫ	unsegmented (Schuster p. 126 mentions -ḫ only as a possible adjective suffix)	„gross“, „erhaben“	secure	exact	cited:Schuster 1974, p. 126; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n143	counts	Schuster p. 86: ti-it-ta-aḫ-zi-la-at = Hitt. šalli GIŠŠÚ.A „der grosse Thron“ (tittaḫ = šalli, after Laroche); p. 126 tittaḫ „gross“, „erhaben“. Kammenhuber's ḫun (from ḫun-zinar „Groß-Musik“) is doubtful.
+33	one	lexical									
+34	who?	lexical									
+35	he/she (3sg)	morphology									grammatical item: see data/morphology.md
+36	to hit/beat	lexical									
+37	leg/foot	lexical									
+38	horn	lexical									
+39	this	lexical	anna, ana	anna/ana	unsegmented	„dies(er)”; „dies(?)”	doubtful	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 535; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n550	exploratory	Kammenhuber p. 535 anna „dies(?)“; Laroche's „dies(er)“ (p. 535). Not in Schuster.
+40	fish	lexical									
+41	yesterday	lexical									
+42	to drink	lexical									
+43	black	lexical									
+44	navel	lexical									
+45	to stand	lexical	antiu	antiu	unsegmented (only the stem form is attested)	„stehen, sich stellen” (= heth. arta(ri) „er steht, stellt sich”)	doubtful	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 526; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n541	exploratory	Kammenhuber p. 526 antiu „stehen, sich stellen“ = Hitt. arta(ri); p. 509 'zeigt vermutlich antiu = heth. arta(ri)' (doubt marker 'vermutlich'); one poorly preserved bilingual. Not in Schuster.
+46	to bite	lexical									
+47	back	lexical									
+48	wind	lexical	pipiz(z)il	pipiz(z)il	unsegmented	„Wind”	secure	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 466; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n481	counts	Kammenhuber pp. 466, 478, 498, 518 („Korrekt sind: ... pipiz(z)il „Wind““; Hitt. ḫuu̯ant-). Schuster gives only u̯aₐ/u̯iᵢ-bi-zi-il „Regenböe“ (not the slot meaning) and cites pipiz(z)el „Wind“ only in a bibliography title, so he gives no form for this slot.
+49	smoke	lexical									
+50	what?	lexical									
+51	child (kin term)	lexical	li-e-bi-nu	in	li-e- (possessive) + bi- (plural) + in „Sohn“ + -u (Schuster p. 128, offered as his preferred but tentative analysis)	„Söhne (A.pl.)“	secure	permitted-shift	cited:Schuster 1974, p. 126; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n143	counts	Schuster p. 126: li-e-bi-nu = Hitt. DUMU.MEŠ „Söhne“ (Forrer, Laroche); gloss secure, but the stem in/en is his proposal (p. 128: singular unattested). Kammenhuber 1969 p. 447 gives pinu „Kind“ with doubt (pinu or inu?).
+52	egg	lexical									
+53	to give	lexical	i̯a	i̯a	a-aš-ši-i̯a = a-aš- + i̯a „sie gaben“ (p. 121); 'Als Verbalstamm bleibt i̯a übrig' (p. 122)	„wir geben“	secure	exact	cited:Schuster 1974, p. 92; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n109	counts	Schuster pp. 92, 121-122 (bilingual = Hitt. pai-). Kammenhuber 1969 p. 526 ai̯a, (i)i̯a „geben“.
+54	new	lexical									
+55	to burn (intr.)	lexical									
+56	not	morphology									grammatical item: see data/morphology.md
+57	good	lexical	malḫib	malḫib	i-malḫib = i- (article/singular) + malḫib (Schuster p. 101)	„gut“	secure	exact	cited:Schuster 1974, p. 101; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n118	counts	Schuster p. 101 malḫib „gut“ (after Forrer); p. 143 = Hitt. aššu „Gutes“. Kammenhuber 1969 p. 466 malḫip. Both note the word is used as noun 'good (thing)' and adjective.
+58	to know	lexical									
+59	knee	lexical									
+60	sand	lexical									
+61	to laugh	lexical									
+62	to hear	lexical									
+63	soil	lexical	*štarrazil	štarrazil	iš-tar-ra-zi-il-bi = (i)štarrazil + -bi „aber“; štarra(t/z) + -il suffix (Schuster p. 107)	Wort für „Erde“; = dankuwai taknī „in die dunkle Erde“	secure	permitted-shift	cited:Schuster 1974, p. 107; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n124	counts	Schuster p. 107: word for „Erde“ (= Hitt. dankuwai taknī 'into the dark earth'); his 'wohl' concerns the stem shape, not the meaning. Kammenhuber 1969 p. 447 ištarrazil „Erde“. earth -> soil is a permitted shift.
+64	leaf	lexical									
+65	red	lexical									
+66	liver	lexical									
+67	to hide	lexical	u̯aₐ-aḫ-zi-i-ḫé-ir-ta	her/hir	u̯aₐ- (verbal plural) + -aḫ- + -zi- + her/hir + -ta (Schuster p. 105-106)	„sie (die Götter) mögen verbergen“	doubtful	exact	cited:Schuster 1974, p. 105; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n122	exploratory	Gloss 'hide' comes only from the Hittite rendering munnandu „sie mögen verbergen“; Schuster himself derives the root her/hir „bestimmen“ (p. 106). Kammenhuber 1969 p. 529 *ziḫer „sich verbergen (o.ä.)“, also doubtful.
+68	skin/hide	lexical	le-šteraḫ	šteraḫ	le- (possessive) + šteraḫ (Kammenhuber p. 481)	„seine-Fell(e)” (= heth. KUŠNÍG.BÀRḪI.A „die Felle”; KUŠNÍG.BÀR „Fell, Teppich, Decke”)	doubtful	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 481; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n496	exploratory	Glossed only through the Hittite equivalent KUŠNÍG.BÀR (translated „Fell“ after R. Werner); Kammenhuber's own word list (p. 447) gives šteraḫ as '(Nomen)' with no meaning. Not in Schuster.
+69	to suck	lexical									
+70	to carry	lexical									
+71	ant	lexical									
+72	heavy	lexical									
+73	to take	lexical	miš	miš	mi-ša-a = miš + -a (imperative) „nimm!“ (Schuster p. 116)	„nimm !“; miš als Stamm des Verbums „nehmen“	secure	exact	cited:Schuster 1974, p. 116; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n133	counts	Schuster gives two stems glossed „nehmen“ (= Hitt. dā-): miš (pp. 116, 120) and tuḫ (a-an-tu-uḫ, p. 116); both secure, attestation counts not stated, so the first in alphabetical order (miš) is taken (§1.1). Kammenhuber 1969 pp. 527, 529 has the same pair, miš(a) and tuḫ.
+74	old	lexical									
+75	to eat	lexical	tu	tu	i-tu-ú-e = i- (1st person) + tu + -e (present) „wir (werden) essen“ = Hitt. edueni (Schuster p. 93); u̯aₐ-aḫ-tu-u = Hitt. adanzi (p. 105)	„wir (werden) essen“	secure	exact	cited:Schuster 1974, p. 93; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n110	counts	Disagreement: Kammenhuber 1969 p. 528 gives pu/u̯aₐu [f(a)u] „(fr)essen“ from a badly transmitted bilingual.
+76	thigh	lexical									
+77	thick	lexical									
+78	long	lexical									
+79	to blow	lexical									
+80	wood	lexical	zi-e-ḫar / zi-i-ḫar	ziḫar	unsegmented	„Holz“	secure	exact	cited:Schuster 1974, p. 103; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n120	counts	Schuster p. 103: = Hitt. GIŠ-ru „Holz“ (wood); 'Kein weiterer Beleg'. Kammenhuber 1969 p. 455 zeḫar/ziḫar.
+81	to run	lexical									
+82	to fall	lexical	zik	zik	tu-uk-zi-ik = tu-k- + zik (Kammenhuber p. 530; she calls the prefix analysis unclear, p. 531)	„von oben auf etwas herab/hinab fallen” (= heth. -kan mauš- „fallen”)	secure	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 530; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n545	counts	Kammenhuber p. 517, 530: tu-uk-zi-ik = Hitt. -kan maušta „er fiel“, one attestation (Moon myth, badly transmitted); 'bedeutet offenbar „von oben auf etwas herab/hinab fallen“'. Not in Schuster.
+83	eye	lexical									
+84	ash	lexical									
+85	tail	lexical									
+86	dog	lexical									
+87	to cry/weep	lexical									
+88	to tie	lexical									
+89	to see	lexical	u̯aₐ-aḫ-ku-un	kun	u̯aₐ-ḫ-kun (segmentation from Kammenhuber 1969 p. 526; Schuster p. 105 leaves it open)	„sie sah es“	secure	exact	cited:Schuster 1974, p. 105; https://archive.org/details/die-hattisch-hethitischen-bilinguen/page/n122	counts	Schuster p. 105: u̯aₐ-aḫ-ku-un = Hitt. aušta=at „sie sah es“ (Forrer 236). Kammenhuber 1969 p. 526 kun(nu) „sehen“ = Hitt. au(š)-. Schuster's a-an-ta-ab-nu „sie schauten an“ (p. 120) has a tentative stem.
+90	sweet	lexical									
+91	rope	lexical									
+92	shade/shadow	lexical									
+93	bird	lexical									
+94	salt	lexical									
+95	small	lexical	ippi	ippi	ippi-zinar = ippi + zinar „Musik“ (Kammenhuber p. 437, 452, after Laroche)	„Klein-Musik” (compound ippi-zinar)	doubtful	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 452; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n467	exploratory	Glossed only through the compound ippi-zinar „Klein-Musik“; the element is not glossed on its own. Not in Schuster.
+96	wide	lexical									
+97	star	lexical									
+98	in	lexical	ḫa-	ḫa-	bound locative prefix (Kammenhuber p. 470, 490)	„hinein” (heth. anda); „3. Lokativ”; „inmitten(?)”, „drinnen(??)”	doubtful	exact	cited:Kammenhuber 1969 (HdO 'Hattisch'), p. 490; https://archive.org/details/friedrich-reiner-kammenhuber-neumann-heubeck-altkleinasiatische-sprachen-1969/page/n505	exploratory	Kammenhuber gives three bound locative prefixes rendered by Hitt. anda 'in(to)': ḫa-, pe-, ta-, all hedged ('Alle heth. Übersetzungen sind nur annähernde Wiedergaben'); all doubtful, so the first in alphabetical order is taken. A prefix, not a free adposition. Not in Schuster.
+99	hard	lexical									
+100	to crush/grind	lexical									
