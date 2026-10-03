@@ -68,7 +68,9 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 
 ## Status
 
-Just started. No data or results yet.
+Pre-registered: the comparison list, matching rules, chance-baseline controls
+and outcome criteria are fixed in [`docs/preregistration.md`](docs/preregistration.md),
+committed before any data. No data or results yet.
 
 ## Licence
 
