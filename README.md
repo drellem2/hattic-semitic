@@ -131,10 +131,13 @@ Proto-Semitic, and 3 for Proto-Afroasiatic.
    - morphology: 1 of 8 items testable, 0 non-trivial matches.
 
    The collated-only result is the same, because no form is uncollated. This
-   is the Proto-Semitic arm. The A4 Proto-Afroasiatic arm's data are now
-   assembled (n = 17, see above) but not yet compared; its n cannot exceed
-   the 17 qualifying Hattic slots, so the combined
-   A4.5 reading is also "the data cannot decide". See
+   is the Proto-Semitic arm.
+4. **Proto-Afroasiatic arm run (A4).** Its outcome is also **the data cannot
+   decide**: n = 17 < 30, as A4.6 fixed before any PAA data. The full
+   procedure found no candidate pairs, so R = 0, with Control A p = 1.000,
+   and 3 of 8 morphology items testable with 0 non-trivial matches. The
+   A4.1 sensitivity run on Orel & Stolbova 1995 agrees (n = 16, R = 0). The
+   combined A4.5 reading is **the data cannot decide**. See
    [`results/summary.md`](results/summary.md).
 
 ## Licence

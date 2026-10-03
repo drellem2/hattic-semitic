@@ -3,10 +3,10 @@
 Lexical and morphological comparanda, assembled under
 [`docs/preregistration.md`](../docs/preregistration.md) and its amendments
 A1–A7 (§9). The comparison run on them is summarised in
-[`../results/summary.md`](../results/summary.md). That comparison covers the
-Proto-Semitic arm only. The two Proto-Afroasiatic lists (A4–A7), the primary
-one and the sensitivity one, were assembled afterwards and have not yet been
-compared.
+[`../results/summary.md`](../results/summary.md). The two Proto-Afroasiatic
+lists (A4–A7), the primary one and the sensitivity one, were assembled after
+the Proto-Semitic arm had been run. They were then compared in the
+Proto-Afroasiatic arm (mg-51839).
 
 | file | contents |
 |---|---|

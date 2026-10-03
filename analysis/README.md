@@ -9,12 +9,18 @@ from `data/`.
   every compared slot with its alignment, the candidate pairs, the
   correspondences and their independent support, Control A (shuffle) and
   Control B (Proto-Uralic), the morphology comparison, the sensitivity runs
-  and the §6 outcome category. Run `python3 analysis/compare.py`. It validates
+  and the §6 outcome category. It also runs the Proto-Afroasiatic arm
+  (amendments A4–A7) on both PAA lists and writes
+  [`results_paa.md`](results_paa.md) and [`results_paa.json`](results_paa.json),
+  with the A4.5 combined reading. The PAA consonants are read by
+  `paa_consonants` under A4.4. The Proto-Semitic outputs are unchanged by
+  the PAA arm. Run `python3 analysis/compare.py`. It validates
   `data/` first and refuses to run if the data do not validate. The
   summary is in [`../results/summary.md`](../results/summary.md).
 - [`test_compare.py`](test_compare.py) holds its tests. They include a
   positive control: a synthetic list with regular correspondences must give
-  R ≥ 5 and shuffle p ≤ 0.01. Run them with
+  R ≥ 5 and shuffle p ≤ 0.01. A second one does the same in PAA notation,
+  with a prefix, an optional segment and the cover vowel V. Run them with
   `python3 -m unittest analysis/test_compare.py`.
 
 - [`validate_data.py`](validate_data.py) checks the slot lists in `data/` and
