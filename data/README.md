@@ -2,7 +2,8 @@
 
 Lexical and morphological comparanda, assembled under
 [`docs/preregistration.md`](../docs/preregistration.md) and its amendments
-A1–A3 (§9). No comparison has been run on them yet.
+A1–A3 (§9). The comparison run on them is summarised in
+[`../results/summary.md`](../results/summary.md).
 
 | file | contents |
 |---|---|

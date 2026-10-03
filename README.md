@@ -69,7 +69,8 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 
 - [`data/`](data/) — lexical and morphological comparanda, with provenance
 - [`analysis/`](analysis/) — correspondence sets and comparisons
-- [`docs/`](docs/) — method notes, source notes, and results
+- [`docs/`](docs/) — pre-registration and method notes
+- [`results/`](results/) — the result summary
 
 ## Status
 
@@ -84,8 +85,8 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
    adds a second arm comparing Hattic with Proto-Afroasiatic, the node a
    sister of Semitic would share with it; only that arm can give support to
    the sister reading.
-2. **Data assembled; no comparison run yet.** See [`data/`](data/) and its
-   README for the full counts and the source list.
+2. **Data assembled.** See [`data/`](data/) and its README for the full
+   counts and the source list.
 
 | | lexical slots filled (of 96) | cited (viewed) | uncollated |
 |---|---|---|---|
@@ -109,6 +110,20 @@ Proto-Semitic form, against the n ≥ 30 that §6 requires. Only 1 of the 8
 morphology items is testable. As assembled, the data point to the
 pre-registered outcome **"the data cannot decide"**. That is stated here
 before any comparison has been run.
+
+3. **Comparison run.** The outcome is **the data cannot decide**: n = 9,
+   and §6 needs n ≥ 30. The category follows from n alone. The full procedure
+   was still run and found:
+   - no candidate pairs, so R = 0;
+   - Control A shuffle p = 1.000;
+   - Control B: n_PU = 13, R_PU = 0;
+   - morphology: 1 of 8 items testable, 0 non-trivial matches.
+
+   The collated-only result is the same, because no form is uncollated. This
+   is the Proto-Semitic arm. The A4 Proto-Afroasiatic arm has no data yet,
+   but its n cannot exceed the 17 qualifying Hattic slots, so the combined
+   A4.5 reading is also "the data cannot decide". See
+   [`results/summary.md`](results/summary.md).
 
 ## Licence
 

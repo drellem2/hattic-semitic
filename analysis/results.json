@@ -1,0 +1,3200 @@
+{
+ "runs": {
+  "main": {
+   "hattic_semitic": {
+    "n": 9,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "hlk",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 26,
+      "h_stem": "vae",
+      "ref_root": "byt",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "v",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "bn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "ntn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 57,
+      "h_stem": "malḫib",
+      "ref_root": "ṭyb",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ṭ",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "y",
+        "ref_cls": "W",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "ʾrṣ́",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "r",
+        "ref_cls": "R",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "ṣ́",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": "ʾ",
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "lḥm",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "l",
+        "ref_cls": "R",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "hwy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "w",
+        "ref_cls": "W",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "x̣zy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "x̣",
+        "ref_cls": "H",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "z",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "hattic_uralic": {
+    "n": 13,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "*meni-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 6,
+      "h_stem": "aleb",
+      "ref_root": "*käxli",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 13,
+      "h_stem": "tumil",
+      "ref_root": "*śådå-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ś",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": true
+       },
+       {
+        "ref": "d",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 25,
+      "h_stem": "bu",
+      "ref_root": "meke",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 27,
+      "h_stem": "tiuz",
+      "ref_root": "pije",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 32,
+      "h_stem": "tittaḫ",
+      "ref_root": "anɜ (onɜ)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "ȣ̈kɜ (jȣ̈kɜ), ȣ̈γɜ (jȣ̈γɜ)",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "*mexi-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "maγe",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "γ",
+        "ref_cls": "H",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "*porɨ-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 80,
+      "h_stem": "ziḫar",
+      "ref_root": "*joxɨ",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "ećɜ-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "attɜ- (ottɜ-)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "control_A": {
+    "p": 1.0,
+    "shuffles": 1000,
+    "ge_observed": 1000,
+    "distribution": {
+     "0": 1000
+    }
+   },
+   "lexical_conditions": {
+    "R>=5": false,
+    "control B uninformative (n_PU < 20)": true,
+    "p<=0.01": false
+   },
+   "lexical_pass": false,
+   "morphology": {
+    "hattic_semitic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "*-na/-ni/-nu",
+         "hattic_position": "prefix",
+         "ref_position": "suffix",
+         "position_agrees": false,
+         "consonants_agree": true,
+         "matching_consonants": 1,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 1,
+     "nontrivial": 0
+    },
+    "hattic_uralic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ú-un",
+         "ref": "*tun",
+         "hattic_position": "independent",
+         "ref_position": "independent",
+         "position_agrees": true,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        },
+        {
+         "hattic": "ú-/u-",
+         "ref": "*tun",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "mȣ̈",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 2,
+     "nontrivial": 0
+    },
+    "testable": false,
+    "pass": false
+   },
+   "outcome": "the data cannot decide",
+   "outcome_reason": "n = 9 < 30"
+  },
+  "collated": {
+   "hattic_semitic": {
+    "n": 9,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "hlk",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 26,
+      "h_stem": "vae",
+      "ref_root": "byt",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "v",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "bn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "ntn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 57,
+      "h_stem": "malḫib",
+      "ref_root": "ṭyb",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ṭ",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "y",
+        "ref_cls": "W",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "ʾrṣ́",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "r",
+        "ref_cls": "R",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "ṣ́",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": "ʾ",
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "lḥm",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "l",
+        "ref_cls": "R",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "hwy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "w",
+        "ref_cls": "W",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "x̣zy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "x̣",
+        "ref_cls": "H",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "z",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "hattic_uralic": {
+    "n": 13,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "*meni-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 6,
+      "h_stem": "aleb",
+      "ref_root": "*käxli",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 13,
+      "h_stem": "tumil",
+      "ref_root": "*śådå-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ś",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": true
+       },
+       {
+        "ref": "d",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 25,
+      "h_stem": "bu",
+      "ref_root": "meke",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 27,
+      "h_stem": "tiuz",
+      "ref_root": "pije",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 32,
+      "h_stem": "tittaḫ",
+      "ref_root": "anɜ (onɜ)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "ȣ̈kɜ (jȣ̈kɜ), ȣ̈γɜ (jȣ̈γɜ)",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "*mexi-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "maγe",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "γ",
+        "ref_cls": "H",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "*porɨ-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 80,
+      "h_stem": "ziḫar",
+      "ref_root": "*joxɨ",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "ećɜ-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "attɜ- (ottɜ-)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "control_A": {
+    "p": 1.0,
+    "shuffles": 1000,
+    "ge_observed": 1000,
+    "distribution": {
+     "0": 1000
+    }
+   },
+   "lexical_conditions": {
+    "R>=5": false,
+    "control B uninformative (n_PU < 20)": true,
+    "p<=0.01": false
+   },
+   "lexical_pass": false,
+   "morphology": {
+    "hattic_semitic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "*-na/-ni/-nu",
+         "hattic_position": "prefix",
+         "ref_position": "suffix",
+         "position_agrees": false,
+         "consonants_agree": true,
+         "matching_consonants": 1,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 1,
+     "nontrivial": 0
+    },
+    "hattic_uralic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ú-un",
+         "ref": "*tun",
+         "hattic_position": "independent",
+         "ref_position": "independent",
+         "position_agrees": true,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        },
+        {
+         "hattic": "ú-/u-",
+         "ref": "*tun",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "mȣ̈",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 2,
+     "nontrivial": 0
+    },
+    "testable": false,
+    "pass": false
+   },
+   "outcome": "the data cannot decide",
+   "outcome_reason": "n = 9 < 30"
+  },
+  "exact": {
+   "hattic_semitic": {
+    "n": 7,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "hlk",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 26,
+      "h_stem": "vae",
+      "ref_root": "byt",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "v",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "ntn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 57,
+      "h_stem": "malḫib",
+      "ref_root": "ṭyb",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ṭ",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "y",
+        "ref_cls": "W",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "lḥm",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "l",
+        "ref_cls": "R",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "hwy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "w",
+        "ref_cls": "W",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "x̣zy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "x̣",
+        "ref_cls": "H",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "z",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "hattic_uralic": {
+    "n": 10,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "*meni-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 6,
+      "h_stem": "aleb",
+      "ref_root": "*käxli",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 13,
+      "h_stem": "tumil",
+      "ref_root": "*śådå-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ś",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": true
+       },
+       {
+        "ref": "d",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 25,
+      "h_stem": "bu",
+      "ref_root": "meke",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 27,
+      "h_stem": "tiuz",
+      "ref_root": "pije",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 32,
+      "h_stem": "tittaḫ",
+      "ref_root": "anɜ (onɜ)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "*mexi-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "*porɨ-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "ećɜ-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "attɜ- (ottɜ-)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "control_A": {
+    "p": 1.0,
+    "shuffles": 1000,
+    "ge_observed": 1000,
+    "distribution": {
+     "0": 1000
+    }
+   },
+   "lexical_conditions": {
+    "R>=5": false,
+    "control B uninformative (n_PU < 20)": true,
+    "p<=0.01": false
+   },
+   "lexical_pass": false,
+   "morphology": {
+    "hattic_semitic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "*-na/-ni/-nu",
+         "hattic_position": "prefix",
+         "ref_position": "suffix",
+         "position_agrees": false,
+         "consonants_agree": true,
+         "matching_consonants": 1,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 1,
+     "nontrivial": 0
+    },
+    "hattic_uralic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ú-un",
+         "ref": "*tun",
+         "hattic_position": "independent",
+         "ref_position": "independent",
+         "position_agrees": true,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        },
+        {
+         "hattic": "ú-/u-",
+         "ref": "*tun",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "mȣ̈",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 2,
+     "nontrivial": 0
+    },
+    "testable": false,
+    "pass": false
+   },
+   "outcome": "the data cannot decide",
+   "outcome_reason": "n = 7 < 30"
+  },
+  "exploratory": {
+   "hattic_semitic": {
+    "n": 12,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "hlk",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 26,
+      "h_stem": "vae",
+      "ref_root": "byt",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "v",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 45,
+      "h_stem": "antiu",
+      "ref_root": "ḏwḏ1",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ḏ",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "w",
+        "ref_cls": "W",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "bn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "ntn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 57,
+      "h_stem": "malḫib",
+      "ref_root": "ṭyb",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ṭ",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "y",
+        "ref_cls": "W",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "ʾrṣ́",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "r",
+        "ref_cls": "R",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "ṣ́",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": "ʾ",
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "lḥm",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "l",
+        "ref_cls": "R",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "hwy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "h",
+        "ref_cls": "H",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "w",
+        "ref_cls": "W",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "x̣zy",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "x̣",
+        "ref_cls": "H",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "z",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 95,
+      "h_stem": "ippi",
+      "ref_root": "qṭn",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "q",
+        "ref_cls": "K",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 98,
+      "h_stem": "ḫa-",
+      "ref_root": "b",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "b",
+        "ref_cls": "P",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "hattic_uralic": {
+    "n": 16,
+    "R": 0,
+    "r": 0.0,
+    "candidates": 0,
+    "pairs": [
+     {
+      "slot": 3,
+      "h_stem": "nu",
+      "ref_root": "*meni-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 6,
+      "h_stem": "aleb",
+      "ref_root": "*käxli",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "l",
+        "hattic_cls": "R",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 13,
+      "h_stem": "tumil",
+      "ref_root": "*śådå-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ś",
+        "ref_cls": "S",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": true
+       },
+       {
+        "ref": "d",
+        "ref_cls": "T",
+        "hattic": "m",
+        "hattic_cls": "M",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 25,
+      "h_stem": "bu",
+      "ref_root": "meke",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "p",
+        "hattic_cls": "P",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 27,
+      "h_stem": "tiuz",
+      "ref_root": "pije",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 32,
+      "h_stem": "tittaḫ",
+      "ref_root": "anɜ (onɜ)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "n",
+        "ref_cls": "N",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 39,
+      "h_stem": "anna/ana",
+      "ref_root": "će, ći",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 51,
+      "h_stem": "in",
+      "ref_root": "ȣ̈kɜ (jȣ̈kɜ), ȣ̈γɜ (jȣ̈γɜ)",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 53,
+      "h_stem": "i̯a",
+      "ref_root": "*mexi-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "y",
+        "hattic_cls": "W",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 63,
+      "h_stem": "štarrazil",
+      "ref_root": "maγe",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "m",
+        "ref_cls": "M",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "γ",
+        "ref_cls": "H",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 67,
+      "h_stem": "her/hir",
+      "ref_root": "čukka-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "č",
+        "ref_cls": "S",
+        "hattic": "h",
+        "hattic_cls": "H",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "k",
+        "ref_cls": "K",
+        "hattic": "r",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 68,
+      "h_stem": "šteraḫ",
+      "ref_root": "ćäptɜ",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "š",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": true
+       },
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "non-initial",
+        "match": false
+       },
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "r",
+        "hattic_cls": "R",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 75,
+      "h_stem": "tu",
+      "ref_root": "*porɨ-",
+      "monoconsonantal": true,
+      "positions": [
+       {
+        "ref": "p",
+        "ref_cls": "P",
+        "hattic": "t",
+        "hattic_cls": "T",
+        "position": "initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 80,
+      "h_stem": "ziḫar",
+      "ref_root": "*joxɨ",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "j",
+        "ref_cls": "W",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "x",
+        "ref_cls": "H",
+        "hattic": "ḫ",
+        "hattic_cls": "H",
+        "position": "non-initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 82,
+      "h_stem": "zik",
+      "ref_root": "ećɜ-",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "ć",
+        "ref_cls": "S",
+        "hattic": "z",
+        "hattic_cls": "S",
+        "position": "initial",
+        "match": true
+       }
+      ],
+      "matches": 1,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     },
+     {
+      "slot": 89,
+      "h_stem": "kun",
+      "ref_root": "attɜ- (ottɜ-)",
+      "monoconsonantal": false,
+      "positions": [
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "k",
+        "hattic_cls": "K",
+        "position": "initial",
+        "match": false
+       },
+       {
+        "ref": "t",
+        "ref_cls": "T",
+        "hattic": "n",
+        "hattic_cls": "N",
+        "position": "non-initial",
+        "match": false
+       }
+      ],
+      "matches": 0,
+      "candidate": false,
+      "skipped": null,
+      "regular_correspondences": 0,
+      "regular_cognate_set": false
+     }
+    ],
+    "correspondences": []
+   },
+   "control_A": {
+    "p": 1.0,
+    "shuffles": 1000,
+    "ge_observed": 1000,
+    "distribution": {
+     "0": 1000
+    }
+   },
+   "lexical_conditions": {
+    "R>=5": false,
+    "control B uninformative (n_PU < 20)": true,
+    "p<=0.01": false
+   },
+   "lexical_pass": false,
+   "morphology": {
+    "hattic_semitic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "*-na/-ni/-nu",
+         "hattic_position": "prefix",
+         "ref_position": "suffix",
+         "position_agrees": false,
+         "consonants_agree": true,
+         "matching_consonants": 1,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 1,
+     "nontrivial": 0
+    },
+    "hattic_uralic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ú-un",
+         "ref": "*tun",
+         "hattic_position": "independent",
+         "ref_position": "independent",
+         "position_agrees": true,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        },
+        {
+         "hattic": "ú-/u-",
+         "ref": "*tun",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "mȣ̈",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 2,
+     "nontrivial": 0
+    },
+    "testable": false,
+    "pass": false
+   },
+   "outcome": "the data cannot decide",
+   "outcome_reason": "n = 12 < 30"
+  },
+  "strict": {
+   "hattic_semitic": {
+    "n": 0,
+    "R": 0,
+    "r": null,
+    "candidates": 0,
+    "pairs": [],
+    "correspondences": []
+   },
+   "hattic_uralic": {
+    "n": 0,
+    "R": 0,
+    "r": null,
+    "candidates": 0,
+    "pairs": [],
+    "correspondences": []
+   },
+   "control_A": {
+    "p": null,
+    "shuffles": 0,
+    "ge_observed": 0,
+    "distribution": {}
+   },
+   "lexical_conditions": {
+    "R>=5": false,
+    "control B uninformative (n_PU < 20)": true,
+    "p<=0.01": false
+   },
+   "lexical_pass": false,
+   "morphology": {
+    "hattic_semitic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "*-na/-ni/-nu",
+         "hattic_position": "prefix",
+         "ref_position": "suffix",
+         "position_agrees": false,
+         "consonants_agree": true,
+         "matching_consonants": 1,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 1,
+     "nontrivial": 0
+    },
+    "hattic_uralic": {
+     "items": [
+      {
+       "item": 1,
+       "name": "1sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 2,
+       "name": "2sg",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ú-un",
+         "ref": "*tun",
+         "hattic_position": "independent",
+         "ref_position": "independent",
+         "position_agrees": true,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        },
+        {
+         "hattic": "ú-/u-",
+         "ref": "*tun",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 3,
+       "name": "3sg",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 4,
+       "name": "1pl",
+       "testable": true,
+       "comparisons": [
+        {
+         "hattic": "ai- / (n)i-",
+         "ref": "mȣ̈",
+         "hattic_position": "prefix",
+         "ref_position": "independent",
+         "position_agrees": false,
+         "consonants_agree": false,
+         "matching_consonants": 0,
+         "match": false
+        }
+       ]
+      },
+      {
+       "item": 5,
+       "name": "negation",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 6,
+       "name": "prohibitive",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 7,
+       "name": "nominal plural",
+       "testable": false,
+       "comparisons": []
+      },
+      {
+       "item": 8,
+       "name": "causative",
+       "testable": false,
+       "comparisons": []
+      }
+     ],
+     "testable": 2,
+     "nontrivial": 0
+    },
+    "testable": false,
+    "pass": false
+   },
+   "outcome": "the data cannot decide",
+   "outcome_reason": "n = 0 < 30"
+  }
+ },
+ "hattic_filled": 24,
+ "hattic_uncollated": 0,
+ "sensitivity": {
+  "runs": 61,
+  "changed": [
+   {
+    "variant": "pu d -> M",
+    "candidates": [
+     [
+      "hattic_uralic",
+      13
+     ]
+    ]
+   }
+  ]
+ }
+}
