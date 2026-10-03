@@ -176,5 +176,66 @@ class ValidateAfroasiaticTest(ValidateTest):
         self.assertTrue(any("form is empty" in e for e in self.check(rows)))
 
 
+HSED_URL = ("https://archive.org/details/vladimir-e.-orel-olga-v.-stolbova-"
+            "hamito-semitic-etymological-dictionary-materia/page/n92")
+HSED_ROW = dict(
+    root="*dam-", form="*dam-", level="Hamito-Semitic", gloss_as_given="blood",
+    match="exact", provenance=f"cited:Orel & Stolbova 1995 (HSED), no. 639, p. 147; {HSED_URL}",
+    branches="Semitic; Berber; Chadic (WCh); Omotic",
+    non_semitic_branches="3", viewed="2026-10-03",
+    quote="639 *dam- “blood”")
+
+
+class ValidateHsedTest(ValidateAfroasiaticTest):
+    """The A4.1 sensitivity list from Orel & Stolbova 1995 (A6)."""
+
+    def setUp(self):
+        super().setUp()
+        self.cols = v.COLUMNS["proto_afroasiatic_hsed.tsv"]
+        self.path = self.root / "data" / "proto_afroasiatic_hsed.tsv"
+
+    def row(self, **changes):
+        rows = blank_rows(self.cols, self.meanings)
+        rows[6].update(HSED_ROW)
+        rows[6].update(changes)
+        return rows
+
+    def test_non_semitic_count_must_agree(self):
+        errors = self.check(self.row(non_semitic_branches="2"))
+        self.assertTrue(any("non_semitic_branches must be 3" in e for e in errors))
+
+    def test_lower_level_rejected(self):
+        errors = self.check(self.row(level="Proto-Chadic"))
+        self.assertTrue(any("Hamito-Semitic" in e for e in errors))
+
+    def test_primary_level_label_rejected(self):
+        # Each list carries its own source's label (A6 rule 5).
+        errors = self.check(self.row(level="Proto-Afro-Asiatic"))
+        self.assertTrue(any("Hamito-Semitic" in e for e in errors))
+
+    def test_quote_must_carry_gloss(self):
+        errors = self.check(self.row(quote="639 *dam- “red”"))
+        self.assertTrue(any("heading of entry 639" in e for e in errors))
+
+    def test_quote_must_carry_entry_number(self):
+        errors = self.check(self.row(quote="638 *dam- “blood”"))
+        self.assertTrue(any("heading of entry 639" in e for e in errors))
+
+    def test_quote_without_form_rejected(self):
+        rows = blank_rows(self.cols, self.meanings)
+        rows[6].update(quote="639 *dam- “blood”")
+        self.assertTrue(any("form is empty" in e for e in self.check(rows)))
+
+    def test_page_must_lie_on_leaf(self):
+        # p. 147 is on leaf n92 (19 + 147 // 2); p. 149 is not.
+        prov = HSED_ROW["provenance"].replace("p. 147", "p. 149")
+        errors = self.check(self.row(provenance=prov))
+        self.assertTrue(any("not on scan leaf" in e for e in errors))
+
+    def test_provenance_needs_entry_page_and_leaf(self):
+        errors = self.check(self.row(provenance=CITE))
+        self.assertTrue(any("A6 rule 7" in e for e in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

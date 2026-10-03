@@ -2,7 +2,8 @@
 """Validate the slot lists under data/ and report their counts.
 
 Checks, for data/hattic.tsv, data/proto_semitic.tsv,
-data/proto_afroasiatic.tsv and every data/control_*.tsv:
+data/proto_afroasiatic.tsv, data/proto_afroasiatic_hsed.tsv and every
+data/control_*.tsv:
 
 - the header is exactly the expected column list;
 - there is one row per Leipzig-Jakarta slot, 1..100 in order, and each
@@ -16,7 +17,10 @@ data/proto_afroasiatic.tsv and every data/control_*.tsv:
   securely glossed and in a lexical slot (preregistration §1.2, A3);
 - in proto_afroasiatic.tsv, a filled slot is at the Proto-Afro-Asiatic
   level, has reflexes in at least two branches, one not Semitic (A4.1),
-  records the date viewed, and quotes the reconstruction and its gloss.
+  records the date viewed, and quotes the reconstruction and its gloss;
+- in proto_afroasiatic_hsed.tsv (the A4.1 sensitivity list, A6), the same,
+  with the source's own level label, Hamito-Semitic; the quote is the entry
+  heading, and the cited page lies on the cited scan leaf (A6 rule 7).
 
 Exit status is 0 if every file validates, 1 otherwise. Counts are printed
 either way.
@@ -49,6 +53,8 @@ COLUMNS = {
         "form", "gloss_as_given", "match", "provenance", "notes",
     ],
 }
+
+COLUMNS["proto_afroasiatic_hsed.tsv"] = COLUMNS["proto_afroasiatic.tsv"]
 
 ALLOWED = {
     "strand": {"lexical", "morphology"},
@@ -125,7 +131,7 @@ def validate_file(path, columns, meanings):
                     errors.append(f"{where}: {col} set but form is empty")
 
         if "quote" in r and form:
-            errors += paa_errors(where, r)
+            errors += paa_errors(where, r, PAA_LEVEL[path.name])
 
         if "decision" in r and form:
             qualifies = (prov.startswith("cited:")
@@ -140,13 +146,18 @@ def validate_file(path, columns, meanings):
 
 
 PAA_BRANCHES = ("Semitic", "Egyptian", "Berber", "Chadic", "Cushitic", "Omotic")
+# Each source's own label for the Proto-Afroasiatic level (A5 rule 5, A6 rule 5).
+PAA_LEVEL = {"proto_afroasiatic.tsv": "Proto-Afro-Asiatic",
+             "proto_afroasiatic_hsed.tsv": "Hamito-Semitic"}
+# A6 rule 7: cited:<work>, no. N, p. P; <scan>/page/n<leaf>
+HSED_PROV_RE = re.compile(r"^cited:[^;]+, no\. (\d+), p\. (\d+); \S+/page/n(\d+)$")
 
 
-def paa_errors(where, r):
-    """A4.1 / A5 checks on one filled Proto-Afroasiatic row."""
+def paa_errors(where, r, level):
+    """A4.1 / A5 / A6 checks on one filled Proto-Afroasiatic row."""
     errors = []
-    if r["level"] != "Proto-Afro-Asiatic":
-        errors.append(f"{where}: level must be 'Proto-Afro-Asiatic' (A4.1)")
+    if r["level"] != level:
+        errors.append(f"{where}: level must be {level!r} (A4.1)")
     named = [b.split(" (")[0] for b in r["branches"].split("; ") if b]
     if any(b not in PAA_BRANCHES for b in named) or len(set(named)) != len(named):
         errors.append(f"{where}: branches {r['branches']!r} not a list of the six branches")
@@ -157,7 +168,19 @@ def paa_errors(where, r):
         errors.append(f"{where}: non_semitic_branches must be {nonsem}")
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["viewed"]):
         errors.append(f"{where}: viewed must be a YYYY-MM-DD date (A4.1)")
-    if f"Meaning: {r['gloss_as_given']}" not in r["quote"] or r["root"] not in r["quote"]:
+    if level == "Hamito-Semitic":
+        m = HSED_PROV_RE.match(r["provenance"])
+        if not m:
+            errors.append(f"{where}: provenance must cite entry, page and scan leaf (A6 rule 7)")
+        else:
+            entry, page, leaf = map(int, m.groups())
+            if leaf != 19 + page // 2:
+                errors.append(f"{where}: p. {page} is not on scan leaf n{leaf} (A6 rule 7)")
+            if not r["quote"].startswith(f"{entry} {r['root']} “{r['gloss_as_given']}”"):
+                errors.append(f"{where}: quote must be the heading of entry {entry}: "
+                              "number, reconstruction and gloss")
+    elif (f"Meaning: {r['gloss_as_given']}" not in r["quote"]
+          or r["root"] not in r["quote"]):
         errors.append(f"{where}: quote must contain the reconstruction and its gloss")
     return errors
 
@@ -192,7 +215,8 @@ def main(argv):
 
     targets = [("hattic.tsv", COLUMNS["hattic.tsv"]),
                ("proto_semitic.tsv", COLUMNS["proto_semitic.tsv"]),
-               ("proto_afroasiatic.tsv", COLUMNS["proto_afroasiatic.tsv"])]
+               ("proto_afroasiatic.tsv", COLUMNS["proto_afroasiatic.tsv"]),
+               ("proto_afroasiatic_hsed.tsv", COLUMNS["proto_afroasiatic_hsed.tsv"])]
     targets += [(p.name, COLUMNS["control"])
                 for p in sorted(data.glob("control_*.tsv"))]
 
