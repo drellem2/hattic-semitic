@@ -70,6 +70,10 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 
 Just started. No data or results yet.
 
-## License
+## Licence
 
-TBD. Until a license is added, all rights are reserved.
+- **Text and data** — this README, [`docs/`](docs/) and [`data/`](data/) —
+  are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
+  see [`LICENSE-DATA`](LICENSE-DATA).
+- **Code** — [`analysis/`](analysis/) and any scripts — is licensed under the
+  MIT License; see [`LICENSE`](LICENSE).

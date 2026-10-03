@@ -1,0 +1,3 @@
+# Local tool state; never part of the published repository.
+.pogo/
+.claude/
