@@ -54,10 +54,15 @@ live and each is reportable:
 
 ## Data provenance
 
-Provenance is the main risk to this project. Every Hattic and Semitic form
-carries a provenance field: `cited` (with the work and page or entry where
-known) or `uncollated` (not yet checked against a published source). The
-results will state plainly what fraction of the data used is uncollated.
+Provenance is the main risk to this project. Every form carries a provenance
+field.
+
+- **`cited`** gives the work, the page or entry, and the URL where the source
+  text was viewed during collection.
+- **`uncollated`** marks a form that was not checked against a viewed source.
+
+A form known only from memory counts as uncollated, even if the book and page
+it should be in can be named. None of the current data is uncollated.
 Forms are never invented to fill an empty slot. See [`data/`](data/).
 
 ## Layout
@@ -68,9 +73,38 @@ Forms are never invented to fill an empty slot. See [`data/`](data/).
 
 ## Status
 
-Pre-registered: the comparison list, matching rules, chance-baseline controls
-and outcome criteria are fixed in [`docs/preregistration.md`](docs/preregistration.md),
-committed before any data. No data or results yet.
+1. **Pre-registered.** The comparison list, matching rules, chance-baseline
+   controls and outcome criteria are fixed in
+   [`docs/preregistration.md`](docs/preregistration.md), which was committed
+   before any data. Amendments A1–A3 in its §9 were also committed before any
+   data. They check the word list, define `cited` as "viewed during
+   collection", and record which sources could not be viewed and what
+   replaced them.
+2. **Data assembled; no comparison run yet.** See [`data/`](data/) and its
+   README for the full counts and the source list.
+
+| | lexical slots filled (of 96) | cited (viewed) | uncollated |
+|---|---|---|---|
+| Hattic | 24, of which **17 securely glossed** and counting toward the decision | 24 | 0 (0%) |
+| Proto-Semitic | 37 | 37 | 0 (0%) |
+| Proto-Uralic (control) | 61 | 61 | 0 (0%) |
+
+**What could not be sourced.**
+
+- The governing Hattic dictionary, Soysal 2004, could not be viewed, because
+  the only online copy is lending-restricted. Every Hattic form instead comes
+  from Schuster 1974 and Kammenhuber 1969, both viewed as scans. Read
+  strictly, the original registration therefore has **0** qualifying Hattic
+  slots.
+- The two higher-precedence Proto-Semitic sources (Kogan 2011, the SED) and
+  the registered Proto-Semitic grammar (Huehnergard 2019) could not be viewed
+  either.
+
+Only 9 lexical slots are filled with a qualifying Hattic form and a
+Proto-Semitic form, against the n ≥ 30 that §6 requires. Only 1 of the 8
+morphology items is testable. As assembled, the data point to the
+pre-registered outcome **"the data cannot decide"**. That is stated here
+before any comparison has been run.
 
 ## Licence
 
